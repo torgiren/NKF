@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Magazynier</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' href='/media/styles.css' type='text/css'>
+</head>
+<body>
+<header id='head'>
+{% include 'header.html' %}
+{% include 'nav.html' %}
+</header>
+<article>
+{% block content %}
+Magazynier jest systemem wspomagającym gospodarkę magazynową w małej firmie.
+{% endblock %}
+</article>
+{% include 'footer.html' %}
+</body>
+</html>

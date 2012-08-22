@@ -1,0 +1,49 @@
+body
+{
+	background: lightgray;
+}
+h1 {
+padding: 0px;
+margin: 0px;
+color: Green;
+#background: lightblue;
+}
+nav a
+{
+	text-decoration:none;
+	color: inherit;
+}
+#head
+{
+	margin: -7px -7px 10px -7px;
+	position: static;
+	background: lightblue;
+}
+#menu
+{
+	left:0px;
+	border:0px;
+	margin: 0px;
+	padding: 0px;
+	color:darkred;
+	height: 1.2em;
+#	background:lightblue;
+}
+nav li
+{
+	float: left;
+	width: auto;
+	display: block;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 10px 0px 10px;
+#	background: lightblue;
+}
+nav li:hover
+{
+	color: white;
+	background: blue;
+}
+article
+{
+	clear: both;
+}
