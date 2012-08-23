@@ -43,13 +43,14 @@ nav a
 	color: white;
 	background: blue;
 }
-article
+footer
 {
 	clear: both;
 }
 #manage_menu
 {
 	width:10em;
+	float:left;
 }
 .vert_menu li:hover
 {
