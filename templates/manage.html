@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="vert_menu" id='manage_menu'>
+{% block manage_menu %}
+<fieldset>
+	<legend>Towary</legend>
+	<ul>
+		<li><a href='/towary/dodaj'>Dodaj</a></li>
+		<li><a href='/towary/'>Lista</a></li>
+	</ul>
+</fieldset>
+<fieldset>
+	<legend>Paragony</legend>
+	<ul>
+		<li><a href='/paragony/dodaj'>Dodaj</a></li>
+		<li><a href='/paragony/'>Lista</a></li>
+	</ul>
+</fieldset>
+{% endblock %}
+</nav>
+{% block manage_content %}
 Zarządzanie
+{% endblock %}
 {% endblock %}
