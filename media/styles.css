@@ -1,26 +1,25 @@
 body
 {
 	background: lightgray;
+	background-image:url('/media/background.png');
+	background-repeat: no-repeat;
 }
-h1 {
+h1,h2 {
 padding: 0px;
 margin: 0px;
 color: Green;
 #background: lightblue;
 }
-nav a
-{
+nav a {
 	text-decoration:none;
 	color: inherit;
 }
-#head
-{
+#head {
 	margin: -7px -7px 10px -7px;
 	position: static;
-	background: lightblue;
+#	background: lightblue;
 }
-.horiz_menu
-{
+.horiz_menu {
 	left:0px;
 	border:0px;
 	margin: 0px;
@@ -29,8 +28,7 @@ nav a
 	height: 1.2em;
 #	background:lightblue;
 }
-.horiz_menu li
-{
+.horiz_menu li {
 	float: left;
 	width: auto;
 	display: block;
@@ -38,21 +36,35 @@ nav a
 	padding: 0px 10px 0px 10px;
 #	background: lightblue;
 }
-.horiz_menu li:hover
-{
+.horiz_menu li:hover {
 	color: white;
 	background: blue;
 }
-footer
-{
+footer {
 	clear: both;
 }
-#manage_menu
-{
-	width:10em;
+#manage_menu {
+	border: 1px none
+	width:8em;
 	float:left;
 }
-.vert_menu li:hover
-{
-	color: blue;
+.vert_menu ul {
+	margin-top: 0;
+	margin-left: -2em;
+	margin-bottom: -0.5em;
+}
+.vert_menu li {
+	background-image: url('/media/li.png');
+	background-repeat: no-repeat;
+	width:100px;
+	height:25px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+#	margin-left: 0px;
+	padding-left:10px;
+	padding-top: 2px;
+	list-style-type: none;
+}
+.vert_menu li:hover {
+	color: yellow;
 }
