@@ -1,5 +1,5 @@
 from django import forms
-from core import models
+from magazynier.core import models
 class TowarForm(forms.ModelForm):
 	class Meta:
 		model=models.Towar
