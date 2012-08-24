@@ -1,8 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
 import views
 from django.views.generic.simple import direct_to_template
 
@@ -16,13 +14,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 #	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',direct_to_template,{'template':'base.html'}),
-	url(r'^contact/$',direct_to_template,{'template':'contact.html'}),
-	url(r'^features/$',direct_to_template,{'template':'features.html'}),
-	url(r'^manage/$',direct_to_template,{'template':'manage.html'}),
-	url(r'^towary/',include('core.towary_urls')),
+	url(r'^$',direct_to_template,{'template':'towary_list.html'}),
+	url(r'^dodaj/$',views.dodaj_towar),
 
 
-    url(r'^admin/', include(admin.site.urls)),
-	url(r'^media/(?P<path>.*)', 'django.views.static.serve',{'document_root': '/home/torgiren/python/magazynier/media'}),
 )
