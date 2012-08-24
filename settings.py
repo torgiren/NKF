@@ -1,3 +1,7 @@
+import sys
+
+sys.dont_write_bytecode = True
+
 # Django settings for magazynier project.
 
 DEBUG = True
