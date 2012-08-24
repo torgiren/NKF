@@ -31,9 +31,9 @@ def edit_vat(request,id):
 		form=VATForm(instance=object)
 		return render_to_response('vat_add.html',{'form':form,'action':'/vat/%s/edit/'%id})
 def delete_vat(request,id):
+	object=get_object_or_404(VAT,id=id)
 	if request.method=='POST':
-		object=get_object_or_404(VAT,id=id)
 		object.delete()
 		return render_to_response('deleted.html')
 	else:
-		return render_to_response('delete.html',{'action':'/vat/%s/delete/'%id})
+		return render_to_response('delete.html',{'action':'/vat/%s/delete/'%id,'item':object})

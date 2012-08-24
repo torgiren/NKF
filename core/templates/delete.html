@@ -1,7 +1,8 @@
 {% extends 'manage.html' %}
 
 {% block manage_content %}
-Czy na pewno chcesz usunąć wybrany obiekt?
+Czy na pewno chcesz usunąć wybrany obiekt:<br>
+{{ item }}
 <form action='{{action}}' method='post'>
 <input type='submit' value='Tak'>
 </form>
