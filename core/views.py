@@ -22,13 +22,12 @@ def list_vat(request):
 	vats=VAT.objects.all()
 	return render_to_response('vat.html',{'items':vats})
 def edit_vat(request,id):
+	object=get_object_or_404(VAT,id=id)
 	if request.method=='POST':
-		object=get_object_or_404(VAT,id=id)
 		form=VATForm(data=request.POST,instance=object)
 		form.save()
 		return redirect('/manage')
 	else:
-		item=VAT.objects.filter(pk=id)[0]
-		form=VATForm(instance=item)
+		form=VATForm(instance=object)
 		return render_to_response('vat_add.html',{'form':form,'action':'/vat/%s/edit/'%id})
 
