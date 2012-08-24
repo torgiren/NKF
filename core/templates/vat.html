@@ -3,9 +3,11 @@
 {% block manage_content %}
 lista VATów
 <table class='colortable'>
-<tr><td>Lp.</td><td>Wartość</td></tr>
+<tr><td>Lp.</td><td>Wartość</td><td></td><td></td></tr>
 {% for item in items %}
-<tr class="{% cycle row1,row2 %}"><td>{{forloop.counter}}</td><td>{{ item.wartosc }}</td></tr>
+<tr class="{% cycle row1,row2 %}"><td>{{forloop.counter}}</td><td>{{ item.wartosc }}</td>
+<td><a href='/var/{{ item.id }}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
+<td><a href='/vat/{{ item.id }}/delete'><img src='/media/delete.gif' alt='delete'/></a></td></tr>
 {% endfor %}
 </table>
 {% endblock %}

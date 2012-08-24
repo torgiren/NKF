@@ -85,3 +85,8 @@ footer {
 .colortable td {
 	border: 1px solid;
 }
+.colortable img {
+	height: 0.8em;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
