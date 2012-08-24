@@ -5,6 +5,8 @@ class JM(models.Model):
 	nazwa=models.CharField(max_length=10)
 class VAT(models.Model):
 	wartosc=models.DecimalField(max_digits=3,decimal_places=0)
+	def __unicode__(self):
+		return u"%d"%self.wartosc
 class Towar(models.Model):
 	nazwa = models.CharField(max_length=30)
 	jm=models.ForeignKey(JM)

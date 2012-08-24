@@ -1,0 +1,11 @@
+{% extends 'manage.html' %}
+
+{% block manage_content %}
+lista VATów
+<table class='colortable'>
+<tr><td>Lp.</td><td>Wartość</td></tr>
+{% for item in items %}
+<tr class="{% cycle row1,row2 %}"><td>{{forloop.counter}}</td><td>{{ item.wartosc }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

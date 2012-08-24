@@ -1,6 +1,7 @@
 # Create your views here.
 from django.shortcuts import render_to_response,redirect
 from forms import *
+from models import *
 def dodaj_towar(request):
 	form=TowarForm()
 	html=render_to_response('towary_add.html',dictionary={'form':form})
@@ -15,3 +16,6 @@ def dodaj_vat(request):
 		form=VATForm()
 		html=render_to_response('vat_add.html',{'form':form})
 		return html
+def list_vat(request):
+	vats=VAT.objects.all()
+	return render_to_response('vat.html',{'items':vats})
