@@ -14,8 +14,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 #	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',direct_to_template,{'template':'vat.html'}),
+	url(r'^$',views.list_vat),
 	url(r'^dodaj/$',views.dodaj_vat),
+	url(r'^(?P<id>\d+)/edit/$',views.edit_vat),
+	url(r'^(?P<id>\d+)/delete/$',views.delete_vat),
 
 
 )
