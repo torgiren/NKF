@@ -16,6 +16,7 @@ urlpatterns = patterns('',
 #	url(r'^$',include('magazynier.core.urls')),
 	url(r'^$',views.list_vat),
 	url(r'^dodaj/$',views.dodaj_vat),
+	url(r'^(?P<id>\d+)/edit/$',views.edit_vat),
 
 
 )

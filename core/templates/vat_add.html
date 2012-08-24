@@ -3,11 +3,12 @@
 {% block manage_content %}
 Tutaj będzie dodawanie VAT
 a to formularz:
-<form action='/vat/dodaj/' method='post'>
+<form action='{{action}}' method='post'>
 {% csrf_token %}
 <table>
 	{{ form.as_table }}
 </table>
-<input type='submit' value='Dodaj'>
+<input type='hidden' name='id' value='{{ id }}'>
+<input type='submit' value='Zapisz'>
 </form>
 {% endblock %}
