@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 	url(r'^features/$',direct_to_template,{'template':'features.html'}),
 	url(r'^manage/$',direct_to_template,{'template':'manage.html'}),
 	url(r'^towary/',include('magazynier.core.towary_urls')),
+	url(r'^vat/',include('magazynier.core.vat_urls')),
 
 
     url(r'^admin/', include(admin.site.urls)),

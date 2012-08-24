@@ -1,6 +1,6 @@
 body
 {
-	background: lightgray;
+	background: #d9d9d9;
 	background-image:url('/media/background.png');
 	background-repeat: no-repeat;
 }
@@ -45,8 +45,9 @@ footer {
 }
 #manage_menu {
 	border: 1px none
-	width:8em;
+	width:10em;
 	float:left;
+	margin-right: 1em;
 }
 .vert_menu ul {
 	margin-top: 0;
@@ -67,4 +68,31 @@ footer {
 }
 .vert_menu li:hover {
 	color: yellow;
+}
+.vert_menu li a {
+	display: inline-block;
+	width:100%;
+	height: 100%;
+}
+.colortable {
+	border-spacing:0px 0px 0px 0px;
+	border-collapse: collapse;
+			
+}
+.colortable .row1 {
+	background: pink;
+}
+.colortable .row2 {
+	background: lightblue;
+}
+.colortable .row1:hover, .colortable .row2:hover {
+	background: lightgreen;
+}
+.colortable td {
+	border: 1px solid;
+}
+.colortable img {
+	height: 0.8em;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
