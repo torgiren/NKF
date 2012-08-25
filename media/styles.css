@@ -96,3 +96,12 @@ footer {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 }
+#float {
+	position: absolute;
+	background: white;
+	border: solid 1px black;
+	display: none;
+}
+#float td {
+	padding: 3px;
+}

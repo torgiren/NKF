@@ -14,10 +14,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 #	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',views.list_jm),
-	url(r'^dodaj/$',views.dodaj_jm),
-	url(r'^(?P<id>\d+)/edit/$',views.edit_jm),
-	url(r'^(?P<id>\d+)/delete/$',views.delete_jm),
+	url(r'^$',views.list,{'what':'JM'}),
+	url(r'^dodaj/$',views.dodaj,{'what':'JM'}),
+	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':'JM'}),
+	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':'JM'}),
 
 
 )

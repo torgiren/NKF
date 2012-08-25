@@ -1,9 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
 import views
-from django.views.generic.simple import direct_to_template
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'magazynier.views.home', name='home'),
@@ -13,11 +10,6 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-#	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',views.list,{'what':'VAT'}),
-	url(r'^dodaj/$',views.dodaj,{'what':'VAT'}),
-	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':'VAT'}),
-	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':'VAT'}),
-
-
+	url(r'^$',views.index),
+	url(r'^towar/(?P<id>\d+)/$',views.ajax_towar),
 )

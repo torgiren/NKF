@@ -22,6 +22,14 @@ class Towar(models.Model):
 	marza=models.DecimalField(max_digits=5,decimal_places=2)
 	def __unicode__(self):
 		return u"%s"%self.nazwa
+	def zakup_netto(self):
+		return self.cena
+	def zakup_brutto(self):
+		return self.cena*(1+self.vat.wartosc/100)
+	def sprzedaz_netto(self):
+		return self.cena*(1+self.marza/100)
+	def sprzedaz_brutto(self):
+		return self.sprzedaz_netto()*(1+self.vat.wartosc/100)
 	class Meta:
 		ordering=['nazwa']
 
