@@ -1,7 +1,10 @@
 <table class='colortable desc_table'>
 <tr><td>Nazwa:</td><td>{{ towar.nazwa }}</td></tr>
-<tr><td>Cena:</td><td>{{ towar.cena }}</td></tr>
-<tr><td>Marża:</td><td>{{ towar.marza }}</td></tr>
+<tr><td>Cena zakupu netto:</td><td>{{ zakup_netto }}</td></tr>
+<tr><td>Cena zakupu brutto:</td><td>{{ zakup_brutto}}</td></tr>
+<tr><td>Cena sprzedaży netto:</td><td>{{ sprzedaz_netto}}</td></tr>
+<tr><td>Cena sprzedaży brutto:</td><td>{{ sprzedaz_brutto}}</td></tr>
+<tr><td>Marża:</td><td>{{ towar.marza }}%</td></tr>
 <tr><td>JM:</td><td>{{ towar.jm }}</td></tr>
-<tr><td>VAT:</td><td>{{ towar.vat }}</td></tr>
+<tr><td>VAT:</td><td>{{ towar.vat }}%</td></tr>
 </table>

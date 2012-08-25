@@ -6,4 +6,9 @@ def index(request):
 	return render_to_response('ajax_index.html')
 def ajax_towar(request,id):
 	obj=get_object_or_404(Towar,id=id)
-	return render_to_response('ajax_towar.html',{'towar':obj})
+	ceny=dict()
+	ceny['zakup_netto']=obj.zakup_netto();
+	ceny['zakup_brutto']=obj.zakup_brutto()
+	ceny['sprzedaz_netto']=obj.sprzedaz_netto()
+	ceny['sprzedaz_brutto']=obj.sprzedaz_brutto()
+	return render_to_response('ajax_towar.html',dict({'towar':obj}.items()+ceny.items()))
