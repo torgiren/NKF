@@ -1,6 +1,3 @@
-<script type="text/javascript" src="/media/jquery-1.8.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
 	$(".show_towar").mouseover(function(e){
 		id=e.target.id.split('_');
 		$.ajax({url:"/ajax/towar/"+id[1],success:function(result){
@@ -20,6 +17,3 @@ $(document).ready(function(){
 	$("#float").mouseover(function(){
 		$("#float").hide();
 	});
-})
-</script>
-
