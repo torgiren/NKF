@@ -2,18 +2,6 @@
 from django.shortcuts import render_to_response,redirect,get_object_or_404
 from forms import *
 from models import *
-def list_vat(request):
-	vats=VAT.objects.all()
-	return render_to_response('list.html',{'items':vats,'type':'vat','suffix':'%'})
-def edit_vat(request,id):
-	object=get_object_or_404(VAT,id=id)
-	if request.method=='POST':
-		form=VATForm(data=request.POST,instance=object)
-		form.save()
-		return redirect('/manage')
-	else:
-		form=VATForm(instance=object)
-		return render_to_response('add.html',{'form':form,'action':'/vat/%s/edit/'%id})
 def delete_vat(request,id):
 	object=get_object_or_404(VAT,id=id)
 	if request.method=='POST':
@@ -22,9 +10,6 @@ def delete_vat(request,id):
 	else:
 		return render_to_response('delete.html',{'action':'/vat/%s/delete/'%id,'item':object})
 
-def list_jm(request):
-	jms=JM.objects.all()
-	return render_to_response('list.html',{'items':jms,'type':'jm'})
 def edit_jm(request,id):
 	object=get_object_or_404(JM,id=id)
 	if request.method=='POST':
@@ -56,9 +41,6 @@ def dodaj_towar(request):
 		form=TowarForm()
 		html=render_to_response('add.html',{'form':form,'action':'/towar/dodaj/'})
 		return html
-def list_towar(request):
-	towars=Towar.objects.all()
-	return render_to_response('list.html',{'items':towars,'type':'towar'})
 def edit_towar(request,id):
 	object=get_object_or_404(Towar,id=id)
 	if request.method=='POST':
@@ -97,3 +79,13 @@ def dodaj(request,what):
 def list(request,what):
 	items=globals()['%s'%what].objects.all()
 	return render_to_response('list.html',{'items':items,'type':what.lower()})
+def edit(request,id,what):
+	object=get_object_or_404(globals()[what],id=id)
+	Form=globals()["%sForm"%what]
+	if request.method=='POST':
+		form=Form(data=request.POST,instance=object)
+		form.save()
+		return redirect('/manage')
+	else:
+		form=Form(instance=object)
+		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.lower(),id)})
