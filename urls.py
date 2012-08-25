@@ -20,10 +20,10 @@ urlpatterns = patterns('',
 	url(r'^contact/$',direct_to_template,{'template':'contact.html'}),
 	url(r'^features/$',direct_to_template,{'template':'features.html'}),
 	url(r'^manage/$',direct_to_template,{'template':'manage.html'}),
-	url(r'^towary/',include('magazynier.core.towary_urls')),
-	url(r'^vat/',include('magazynier.core.vat_urls')),
+	url(r'^towary/',include('NKF.core.towary_urls')),
+	url(r'^vat/',include('NKF.core.vat_urls')),
 
 
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^media/(?P<path>.*)', 'django.views.static.serve',{'document_root': '/home/torgiren/python/magazynier/media'}),
+	url(r'^media/(?P<path>.*)', 'django.views.static.serve',{'document_root': '/home/torgiren/python/NKF/media'}),
 )

@@ -2,7 +2,7 @@ import sys
 
 sys.dont_write_bytecode = True
 
-# Django settings for magazynier project.
+# Django settings for NKF project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/torgiren/python/magazynier/baza.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/torgiren/python/NKF/baza.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -49,7 +49,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/torgiren/python/magazynier/media/'
+MEDIA_ROOT = '/home/torgiren/python/NKF/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -60,7 +60,7 @@ MEDIA_URL = 'http://127.0.0.1:8000/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-#STATIC_ROOT = '/home/torgiren/python/magazynier/media'
+#STATIC_ROOT = '/home/torgiren/python/NKF/media'
 #STATIC_ROOT = ''
 
 # URL prefix for static files.
@@ -106,13 +106,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'magazynier.urls'
+ROOT_URLCONF = 'NKF.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'/home/torgiren/python/magazynier/templates/',
+	'/home/torgiren/python/NKF/templates/',
 )
 
 INSTALLED_APPS = (
@@ -122,9 +122,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'magazynier.core',
-	'magazynier.faktury',
-	'magazynier.paragony',
+	'NKF.core',
+	'NKF.faktury',
+	'NKF.paragony',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

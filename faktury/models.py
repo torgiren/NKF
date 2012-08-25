@@ -2,7 +2,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 #from magazynier.core.models import Towar
-from magazynier.core.models import *
+from NKF.core.models import *
 def nip_validate(value):
 	if len(value)!=10:
 		raise ValidationError(u'Niepoprawna długość NIPu')
