@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 class JM(models.Model):
 	nazwa=models.CharField(max_length=10)
+	def __unicode__(self):
+		return u"%s"%self.nazwa 
+	class Meta:
+		ordering=['-nazwa']
 class VAT(models.Model):
 	wartosc=models.DecimalField(max_digits=3,decimal_places=0)
 	def __unicode__(self):

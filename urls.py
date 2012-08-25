@@ -22,6 +22,7 @@ urlpatterns = patterns('',
 	url(r'^manage/$',direct_to_template,{'template':'manage.html'}),
 	url(r'^towary/',include('NKF.core.towary_urls')),
 	url(r'^vat/',include('NKF.core.vat_urls')),
+	url(r'^jm/',include('NKF.core.jm_urls')),
 
 
     url(r'^admin/', include(admin.site.urls)),
