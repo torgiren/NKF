@@ -17,7 +17,7 @@ urlpatterns = patterns('',
 	url(r'^$',views.list,{'what':'JM'}),
 	url(r'^dodaj/$',views.dodaj,{'what':'JM'}),
 	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':'JM'}),
-	url(r'^(?P<id>\d+)/delete/$',views.delete_jm),
+	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':'JM'}),
 
 
 )
