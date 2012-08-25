@@ -23,6 +23,8 @@ class Towar(models.Model):
 	marza=models.DecimalField(max_digits=5,decimal_places=2,verbose_name=u'Marża(%)')
 	def __unicode__(self):
 		return u"%s"%self.nazwa
+	def __str__(self):
+		return "Towar"
 	def zakup_netto(self):
 		return self.cena
 	def zakup_brutto(self):
