@@ -2,23 +2,6 @@
 from django.shortcuts import render_to_response,redirect,get_object_or_404
 from forms import *
 from models import *
-def dodaj_towar(request):
-	form=TowarForm()
-	html=render_to_response('towary_add.html',dictionary={'form':form})
-	return html
-
-def dodaj_vat(request):
-	if request.method=='POST':
-		form=VATForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return redirect('/manage');
-		else:
-			return render_to_response('add.html',{'form':form})
-	else:
-		form=VATForm()
-		html=render_to_response('add.html',{'form':form,'action':'/vat/dodaj/'})
-		return html
 def list_vat(request):
 	vats=VAT.objects.all()
 	return render_to_response('list.html',{'items':vats,'type':'vat','suffix':'%'})
@@ -39,18 +22,6 @@ def delete_vat(request,id):
 	else:
 		return render_to_response('delete.html',{'action':'/vat/%s/delete/'%id,'item':object})
 
-def dodaj_jm(request):
-	if request.method=='POST':
-		form=JMForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return redirect('/manage');
-		else:
-			return render_to_response('add.html',{'form':form})
-	else:
-		form=JMForm()
-		html=render_to_response('add.html',{'form':form,'action':'/jm/dodaj/'})
-		return html
 def list_jm(request):
 	jms=JM.objects.all()
 	return render_to_response('list.html',{'items':jms,'type':'jm'})
@@ -104,3 +75,25 @@ def delete_towar(request,id):
 		return render_to_response('deleted.html')
 	else:
 		return render_to_response('delete.html',{'action':'/towar/%s/delete/'%id,'item':object})
+
+
+
+
+
+def dodaj(request,what):
+	Form=globals()["%sForm"%what]
+	if request.method=='POST':
+		form=Form(request.POST)
+#		form=TowarForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/manage');
+		else:
+			return render_to_response('add.html',{'form':form})
+	else:
+		form=Form()
+		html=render_to_response('add.html',{'form':form,'action':'/%s/dodaj/'%what.lower()})
+		return html
+def list_towar(request):
+	towars=Towar.objects.all()
+	return render_to_response('list.html',{'items':towars,'type':'towar'})
