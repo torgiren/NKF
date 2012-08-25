@@ -20,5 +20,9 @@ class Towar(models.Model):
 	cena=models.DecimalField(max_digits=10,decimal_places=2)
 	vat=models.ForeignKey(VAT)
 	marza=models.DecimalField(max_digits=5,decimal_places=2)
+	def __unicode__(self):
+		return u"%s"%self.nazwa
+	class Meta:
+		ordering=['nazwa']
 
 

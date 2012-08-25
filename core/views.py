@@ -70,3 +70,37 @@ def delete_jm(request,id):
 		return render_to_response('deleted.html')
 	else:
 		return render_to_response('delete.html',{'action':'/jm/%s/delete/'%id,'item':object})
+
+
+
+def dodaj_towar(request):
+	if request.method=='POST':
+		form=TowarForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/manage');
+		else:
+			return render_to_response('add.html',{'form':form})
+	else:
+		form=TowarForm()
+		html=render_to_response('add.html',{'form':form,'action':'/towar/dodaj/'})
+		return html
+def list_towar(request):
+	towars=Towar.objects.all()
+	return render_to_response('list.html',{'items':towars,'type':'towar'})
+def edit_towar(request,id):
+	object=get_object_or_404(Towar,id=id)
+	if request.method=='POST':
+		form=TowarForm(data=request.POST,instance=object)
+		form.save()
+		return redirect('/manage')
+	else:
+		form=TowarForm(instance=object)
+		return render_to_response('add.html',{'form':form,'action':'/towar/%s/edit/'%id})
+def delete_towar(request,id):
+	object=get_object_or_404(Towar,id=id)
+	if request.method=='POST':
+		object.delete()
+		return render_to_response('deleted.html')
+	else:
+		return render_to_response('delete.html',{'action':'/towar/%s/delete/'%id,'item':object})
