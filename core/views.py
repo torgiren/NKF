@@ -94,6 +94,6 @@ def dodaj(request,what):
 		form=Form()
 		html=render_to_response('add.html',{'form':form,'action':'/%s/dodaj/'%what.lower()})
 		return html
-def list_towar(request):
-	towars=Towar.objects.all()
-	return render_to_response('list.html',{'items':towars,'type':'towar'})
+def list(request,what):
+	items=globals()['%s'%what].objects.all()
+	return render_to_response('list.html',{'items':items,'type':what.lower()})

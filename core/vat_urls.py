@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 #	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',views.list_vat),
+	url(r'^$',views.list,{'what':'VAT'}),
 	url(r'^dodaj/$',views.dodaj,{'what':'VAT'}),
 	url(r'^(?P<id>\d+)/edit/$',views.edit_vat),
 	url(r'^(?P<id>\d+)/delete/$',views.delete_vat),
