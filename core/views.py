@@ -19,7 +19,10 @@ def dodaj(request,what):
 		return html
 def list(request,what):
 	items=globals()['%s'%what].objects.all()
-	return render_to_response('list.html',{'items':items,'type':what.lower()})
+	dict={'items':items,'type':what.lower()}
+	if what=='VAT':
+		dict['suffix']='%'
+	return render_to_response('list.html',dict)
 def edit(request,id,what):
 	object=get_object_or_404(globals()[what],id=id)
 	Form=globals()["%sForm"%what]
