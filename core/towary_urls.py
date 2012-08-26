@@ -2,6 +2,8 @@ from django.conf.urls.defaults import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 import views
+from models import *
+from forms import *
 from django.views.generic.simple import direct_to_template
 
 urlpatterns = patterns('',
@@ -14,10 +16,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
 #	url(r'^$',include('magazynier.core.urls')),
-	url(r'^$',views.list,{'what':'Towar'}),
-	url(r'^dodaj/$',views.dodaj,{'what':'Towar'}),
-	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':'Towar'}),
-	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':'Towar'}),
+	url(r'^$',views.list,{'what':Towar}),
+	url(r'^dodaj/$',views.dodaj,{'what':Towar,'whatForm':TowarForm}),
+	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':Towar,'whatForm':TowarForm}),
+	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':Towar}),
 
 
 )

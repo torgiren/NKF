@@ -24,6 +24,8 @@ urlpatterns = patterns('',
 	url(r'^vat/',include('NKF.core.vat_urls')),
 	url(r'^jm/',include('NKF.core.jm_urls')),
 	url(r'^ajax/',include('NKF.ajax.urls')),
+	url(r'^miasto/',include('NKF.kontrahenci.miasto_urls')),
+	url(r'^kontrahent/',include('NKF.kontrahenci.kontrahenci_urls')),
 
 
     url(r'^admin/', include(admin.site.urls)),

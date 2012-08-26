@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django.db import models
 
 # Create your models here.
@@ -15,13 +16,15 @@ class VAT(models.Model):
 		ordering=['-wartosc']
 class Towar(models.Model):
 	nazwa = models.CharField(max_length=30)
-	jm=models.ForeignKey(JM)
+	jm=models.ForeignKey(JM,verbose_name='Jednostka miary')
 #cena zakupu netto
-	cena=models.DecimalField(max_digits=10,decimal_places=2)
-	vat=models.ForeignKey(VAT)
-	marza=models.DecimalField(max_digits=5,decimal_places=2)
+	cena=models.DecimalField(max_digits=10,decimal_places=2,verbose_name='cena zak. netto')
+	vat=models.ForeignKey(VAT,verbose_name='VAT')
+	marza=models.DecimalField(max_digits=5,decimal_places=2,verbose_name=u'Marża(%)')
 	def __unicode__(self):
 		return u"%s"%self.nazwa
+	def __str__(self):
+		return "Towar"
 	def zakup_netto(self):
 		return self.cena
 	def zakup_brutto(self):

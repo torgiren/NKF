@@ -105,3 +105,6 @@ footer {
 #float td {
 	padding: 3px;
 }
+fieldset {
+	width: 110px;
+}
