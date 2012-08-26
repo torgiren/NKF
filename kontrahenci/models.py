@@ -27,5 +27,7 @@ class Kontrahent(models.Model):
 	adres=models.CharField(max_length=100)
 	miasto=models.ForeignKey(Miasto)
 	nip=models.CharField(max_length=10,validators=[nip_validate])
+	def __unicode__(self):
+		return u"%s, %s"%(self.nazwa,self.miasto)
 
 # Create your models here.
