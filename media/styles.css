@@ -108,3 +108,10 @@ footer {
 fieldset {
 	width: 110px;
 }
+.faktura_table td {
+	width: 40%;
+}
+.blad {
+	color: red;
+	font-size: 1.5em;
+}

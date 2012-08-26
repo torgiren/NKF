@@ -11,4 +11,7 @@ class Zakup(models.Model):
 class Faktura(models.Model):
 	kontrahent=models.ForeignKey(Kontrahent)
 	data=models.DateField()
-	towary=models.ForeignKey(Zakup)
+	towary=models.ManyToManyField(Zakup,blank=True,null=True)
+	numer=models.CharField(max_length=30)
+	def __unicode__(self):
+		return u"%s, %s"%(self.kontrahent.nazwa,self.data)

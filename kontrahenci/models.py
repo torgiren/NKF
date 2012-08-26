@@ -29,5 +29,7 @@ class Kontrahent(models.Model):
 	nip=models.CharField(max_length=10,validators=[nip_validate])
 	def __unicode__(self):
 		return u"%s, %s"%(self.nazwa,self.miasto)
+	def fullName(self):
+		return u"%s, %s, %s"%(self.nazwa, self.miasto, self.adres)
 
 # Create your models here.
