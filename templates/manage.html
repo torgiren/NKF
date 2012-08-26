@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-
+{% block head %}
+{% include 'towar_opis_jquery.js' %}
+{% include 'kontrahent_opis_jquery.js' %}
+{% include 'menu_slider_jquery.js' %}
+{% endblock %}
 {% block content %}
 <nav class="vert_menu" id='manage_menu'>
 {% block manage_menu %}
@@ -18,6 +22,13 @@
 	</ul>
 </fieldset>
 <fieldset>
+	<legend>Kontrahenci</legend>
+	<ul>
+		<li><a href='/kontrahent/dodaj'>Dodaj</a></li>
+		<li><a href='/kontrahent/'>Lista</a></li>
+	</ul>
+</fieldset>
+<fieldset>
 	<legend>VAT</legend>
 	<ul>
 		<li><a href='/vat/dodaj'>Dodaj</a></li>
@@ -29,6 +40,13 @@
 	<ul>
 		<li><a href='/jm/dodaj'>Dodaj</a></li>
 		<li><a href='/jm/'>Lista</a></li>
+	</ul>
+</fieldset>
+<fieldset>
+	<legend>Miasta</legend>
+	<ul>
+		<li><a href='/miasto/dodaj'>Dodaj</a></li>
+		<li><a href='/miasto/'>Lista</a></li>
 	</ul>
 </fieldset>
 {% endblock %}
