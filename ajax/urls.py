@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
 	url(r'^$',views.index),
 	url(r'^towar/(?P<id>\d+)/$',views.ajax_towar),
+	url(r'^kontrahent/(?P<id>\d+)/$',views.ajax_kontrahent),
 )
