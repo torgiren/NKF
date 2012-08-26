@@ -88,7 +88,7 @@ footer {
 .colortable .row1:hover, .colortable .row2:hover {
 	background: lightgreen;
 }
-.colortable td {
+.colortable td, .colortable th{
 	border: 1px solid;
 }
 .colortable img {
@@ -109,7 +109,7 @@ fieldset {
 	width: 110px;
 }
 .faktura_table td {
-	width: 40%;
+	width: 15%;
 }
 .blad {
 	color: red;

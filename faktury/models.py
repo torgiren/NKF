@@ -8,6 +8,11 @@ class Zakup(models.Model):
 	towar=models.ForeignKey(Towar,related_name='towar')
 	ilosc=models.DecimalField(max_digits=5,decimal_places=3)
 	cena=models.DecimalField(max_digits=10,decimal_places=2)
+	def cena_brutto(self):
+		return round(self.cena*(1+self.towar.vat.wartosc/100),2)
+	def wartosc(self):
+		#TODO Z niewiadomych przyczyn nie dało się self.cena_brutto()*selt.ilosc
+		return round(self.ilosc*self.cena*(1+self.towar.vat.wartosc/100),2)
 class Faktura(models.Model):
 	kontrahent=models.ForeignKey(Kontrahent)
 	data=models.DateField()

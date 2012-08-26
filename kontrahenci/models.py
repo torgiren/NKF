@@ -31,5 +31,7 @@ class Kontrahent(models.Model):
 		return u"%s, %s"%(self.nazwa,self.miasto)
 	def fullName(self):
 		return u"%s, %s, %s"%(self.nazwa, self.miasto, self.adres)
+	def printNip(self):
+		return u"%s-%s-%s-%s"%(self.nip[:3],self.nip[3:6],self.nip[6:8],self.nip[8:10])
 
 # Create your models here.
