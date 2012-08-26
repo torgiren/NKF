@@ -20,6 +20,8 @@ class Miasto(models.Model):
 	nazwa=models.CharField(max_length=16)
 	def __unicode__(self):
 		return self.nazwa
+	class Meta:
+		ordering=['nazwa']
 class Kontrahent(models.Model):
 	nazwa=models.CharField(max_length=255)
 	adres=models.CharField(max_length=100)
