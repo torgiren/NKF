@@ -23,11 +23,18 @@
 </select></td><td><input name='ilosc' type='text' value='1'></td><td><input id='id_cena' name='cena' type='text'></td><td><input type='submit' value='Dodaj'></td></tr>
 </table>
 </form>
+
 <br/><br/>
+
 <table class='colortable faktura_table'>
-<tr><td colspan='4'>{{fakt.numer}}</td><td colspan='3'>{{fakt.data|date:"Y/m/d"}}</td></tr>
+<tr><td colspan='4'><i>Nr: </i>{{fakt.numer}}</td><td colspan='3'><i>Data: </i>{{fakt.data|date:"Y/m/d"}}</td></tr>
+<tr><td colspan='7'>
+<i>Kupujący</i></br/>
+Tutaj będzie nazwa kupującego
+</td></tr>
 <tr>
 <td colspan='7'>
+<i>Sprzedający:</i><br/>
 {{fakt.kontrahent.nazwa}}<br/>
 {{fakt.kontrahent.miasto}},{{fakt.kontrahent.adres}}<br/>
 {{fakt.kontrahent.printNip}}</td></tr>
