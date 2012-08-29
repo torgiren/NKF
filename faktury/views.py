@@ -21,7 +21,10 @@ def dodaj_towary(request, id):
 		form=ZakupForm(request.POST)	
 		if form.is_valid():
 			id=form.save()
-			faktura.towary.add(id)		
+			faktura.towary.add(id)
+			obj=get_object_or_404(Towar,id=form.cleaned_data['towar'].id)
+			obj.cena=form.cleaned_data['cena']
+			obj.save()
 			return redirect(url)
 	dodane=faktura.towary.all()
 	suma=0
