@@ -1,6 +1,29 @@
 {% extends 'manage.html' %}
+{% block head %}
+	document.getElementById('towar_select').focus();
+	{{ block.super }}
+		$('#towar_select').change(function(id)
+		{
+			$(this).val()
+			$.ajax({url:"/ajax/towar/"+$(this).val()+"/cena_zakupu_netto",success:function(result){
+				document.getElementById('id_cena').value=result;
+		}})
+		});
+{% endblock %}
 
 {% block manage_content %}
+<form action='{{ url }}' method='post'>
+<table class='colortable'>
+<tr><th>Towar</th><th>Ilość</th><th>Cena zakupu netto</th><th></th></tr>
+<tr><td><select id='towar_select' name='towar'>
+<option value='0'>Wybierz towar</option>
+{% for item in towary %}
+<option value='{{ item.id }}'>{{item.nazwa}}</option>
+{% endfor %}
+</select></td><td><input name='ilosc' type='text' value='1'></td><td><input id='id_cena' name='cena' type='text'></td><td><input type='submit' value='Dodaj'></td></tr>
+</table>
+</form>
+<br/><br/>
 <table class='colortable faktura_table'>
 <tr><td colspan='4'>{{fakt.numer}}</td><td colspan='3'>{{fakt.data|date:"Y/m/d"}}</td></tr>
 <tr>
@@ -10,19 +33,9 @@
 {{fakt.kontrahent.printNip}}</td></tr>
 <tr><th>L.p</th><th>Nazwa</th><th>Ilość</th><th>Cena netto</th></th><th>VAT</th><th>Cena brutto</th><th>Wartość</th></tr>
 {% for dodany in dodane %}
-<tr><td>{{ forloop.counter }}</td><td>{{dodany.towar}}</td><td>{{ dodany.ilosc }}</td><td>{{ dodany.cena }}</td><td>{{dodany.towar.vat}}%</td><td>{{dodany.cena_brutto}}<td>{{dodany.wartosc}}</td></tr>
+<tr class='{% cycle row1,row2 %}'><td>{{ forloop.counter }}</td><td id='list_{{dodany.towar.id}}' class='show_towar'>{{dodany.towar}}</td><td>{{ dodany.ilosc }}</td><td>{{ dodany.cena }}</td><td>{{dodany.towar.vat}}%</td><td>{{dodany.cena_brutto}}<td>{{dodany.wartosc}}</td></tr>
 {% endfor %}
 <tr><td></td><td></td><td></td><td></td><td></td><td>Suma:</td><td>{{ suma }} </td></tr>
 </table>
 
-<form action='{{ url }}' method='post'>
-<table class='colortable'>
-<tr><th>Towar</th><th>Ilość</th><th>Cena zakupu netto</th><th></th></tr>
-<tr><td><select name='towar'>
-{% for item in towary %}
-<option value='{{ item.id }}'>{{item.nazwa}}</option>
-{% endfor %}
-</select></td><td><input name='ilosc' type='text'></td><td><input name='cena' type='text'></td><td><input type='submit' value='Dodaj'></td></tr>
-</table>
-</form>
 {% endblock %}

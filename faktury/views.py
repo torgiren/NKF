@@ -9,7 +9,7 @@ def dodaj(request):
 		form=FakturaForm(request.POST)
 		if form.is_valid():
 			id=form.save().id
-			return redirect('/faktura/dodaj/%d'%id)
+			return redirect('/faktura/%d/edit'%id)
 		else:
 			return render_to_response('faktura_add.html',{'kontrahenci':kon,'blad':True})
 	else:
