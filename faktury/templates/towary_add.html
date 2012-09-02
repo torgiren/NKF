@@ -12,19 +12,6 @@
 {% endblock %}
 
 {% block manage_content %}
-<form action='{{ url }}' method='post'>
-<table class='colortable'>
-<tr><th>Towar</th><th>Ilość</th><th>Cena zakupu netto</th><th></th></tr>
-<tr><td><select id='towar_select' name='towar'>
-<option value='0'>Wybierz towar</option>
-{% for item in towary %}
-<option value='{{ item.id }}'>{{item.nazwa}}</option>
-{% endfor %}
-</select></td><td><input name='ilosc' type='text' value='1'></td><td><input id='id_cena' name='cena' type='text'></td><td><input type='submit' value='Dodaj'></td></tr>
-</table>
-</form>
-
-<br/><br/>
 
 <table class='colortable faktura_table'>
 <tr><td colspan='4'><i>Nr: </i>{{fakt.numer}}</td><td colspan='3'><i>Data: </i>{{fakt.data|date:"Y/m/d"}}</td></tr>
@@ -45,4 +32,17 @@ Tutaj będzie nazwa kupującego
 <tr><td></td><td></td><td></td><td></td><td></td><td>Suma:</td><td>{{ suma }} </td></tr>
 </table>
 
+<br/>
+
+<form action='{{ url }}' method='post'>
+<table class='colortable'>
+<tr><th>Towar</th><th>Ilość</th><th>Cena zakupu netto</th><th></th></tr>
+<tr><td><select id='towar_select' name='towar'>
+<option value='0'>Wybierz towar</option>
+{% for item in towary %}
+<option value='{{ item.id }}'>{{item.nazwa}}</option>
+{% endfor %}
+</select></td><td><input name='ilosc' type='text' value='1'></td><td><input id='id_cena' name='cena' type='text'></td><td><input type='submit' value='Dodaj'></td></tr>
+</table>
+</form>
 {% endblock %}
