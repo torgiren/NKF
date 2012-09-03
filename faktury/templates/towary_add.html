@@ -14,20 +14,22 @@
 {% block manage_content %}
 
 <table class='colortable faktura_table'>
-<tr><td colspan='4'><i>Nr: </i>{{fakt.numer}}</td><td colspan='3'><i>Data: </i>{{fakt.data|date:"Y/m/d"}}</td></tr>
-<tr><td colspan='7'>
+<tr><td colspan='5'><i>Nr: </i>{{fakt.numer}}</td><td colspan='4'><i>Data: </i>{{fakt.data|date:"Y/m/d"}}</td></tr>
+<tr><td colspan='9'>
 <i>Kupujący</i></br/>
 Tutaj będzie nazwa kupującego
 </td></tr>
 <tr>
-<td colspan='7'>
+<td colspan='9'>
 <i>Sprzedający:</i><br/>
 {{fakt.kontrahent.nazwa}}<br/>
 {{fakt.kontrahent.miasto}},{{fakt.kontrahent.adres}}<br/>
 {{fakt.kontrahent.printNip}}</td></tr>
-<tr><th>L.p</th><th>Nazwa</th><th>Ilość</th><th>Cena netto</th></th><th>VAT</th><th>Cena brutto</th><th>Wartość</th></tr>
+<tr><th>L.p</th><th>Nazwa</th><th>Ilość</th><th>Cena netto</th></th><th>VAT</th><th>Cena brutto</th><th>Wartość</th><th></th><th></th></tr>
 {% for dodany in dodane %}
-<tr class='{% cycle row1,row2 %}'><td>{{ forloop.counter }}</td><td id='list_{{dodany.towar.id}}' class='show_towar'>{{dodany.towar}}</td><td>{{ dodany.ilosc }}</td><td>{{ dodany.cena }}</td><td>{{dodany.towar.vat}}%</td><td>{{dodany.cena_brutto}}<td>{{dodany.wartosc}}</td></tr>
+<tr class='{% cycle row1,row2 %} '><td>{{ forloop.counter }}</td><td id='list_{{dodany.towar.id}}' class='show_towar'>{{dodany.towar}}</td><td>{{ dodany.ilosc }}</td><td {% if dodany.towar.kalkulacja %} class='kalkulacja'{%endif%}>{{ dodany.cena }} {% if dodany.towar.kalkulacja %}<a href=/towar/{{dodany.towar.id}}/kalkulacja><img src='/media/calculator.png' alt='Kalkulacja cen'></a>{% endif %}</td><td>{{dodany.towar.vat}}%</td><td>{{dodany.cena_brutto}}<td>{{dodany.wartosc}}</td>
+<td><a href='/faktura/zakup/{{ dodany.id }}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
+<td><a href='/faktura/zakup/{{ dodany.id }}/delete'><img src='/media/delete.gif' alt='delete'/></a></td></tr>
 {% endfor %}
 <tr><td></td><td></td><td></td><td></td><td></td><td>Suma:</td><td>{{ suma }} </td></tr>
 </table>
