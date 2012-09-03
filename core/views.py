@@ -41,7 +41,7 @@ def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 #		request.session['return_page']=request.path
 		request.session['return_page']=request.META['HTTP_REFERER']
 		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id),'action_prefix':action_prefix})
-def delete(request,id,what):
+def delete(request,id,what,action_prefix=None):
 	object=get_object_or_404(what,id=id)
 	if request.method=='POST':
 		object.delete()
@@ -51,4 +51,4 @@ def delete(request,id,what):
 			return render_to_response('deleted.html')
 	else:
 		request.session['return_page']=request.META['HTTP_REFERER']
-		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object})
+		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object,'action_prefix':action_prefix})

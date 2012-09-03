@@ -8,6 +8,8 @@ class Zakup(models.Model):
 	towar=models.ForeignKey(Towar,related_name='towar')
 	ilosc=models.DecimalField(max_digits=5,decimal_places=3)
 	cena=models.DecimalField(max_digits=10,decimal_places=2)
+	def __unicode__(self):
+		return u"%s, %.2f %s * %.2f zł + %.2f%% , %.2f zł"%(self.towar.nazwa,self.ilosc,self.towar.jm,self.cena,self.towar.vat.wartosc,self.wartosc())
 	def cena_brutto(self):
 		return round(self.cena*(1+self.towar.vat.wartosc/100),2)
 	def wartosc(self):
