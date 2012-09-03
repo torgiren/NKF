@@ -2,6 +2,7 @@
 from django.shortcuts import render_to_response,redirect,get_object_or_404
 from models import *
 from forms import *
+from django.db import IntegrityError
 
 def dodaj(request):
 	kon=Kontrahent.objects.all()
@@ -23,7 +24,13 @@ def dodaj_towary(request, id):
 			id=form.save()
 			faktura.towary.add(id)
 			obj=get_object_or_404(Towar,id=form.cleaned_data['towar'].id)
-			obj.cena=form.cleaned_data['cena']
+			old=obj.cena;
+			new=form.cleaned_data['cena']
+#			obj.cena=form.cleaned_data['cena']
+
+			if old!=new:
+				obj.cena=new
+				obj.kalkulacja=True;
 			obj.save()
 			return redirect(url)
 	dodane=faktura.towary.all()

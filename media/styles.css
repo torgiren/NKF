@@ -111,6 +111,9 @@ fieldset {
 .faktura_table td {
 	width: 15%;
 }
+.faktura_table .kalkulacja {
+	background: red;
+}
 .blad {
 	color: red;
 	font-size: 1.5em;
