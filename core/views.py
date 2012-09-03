@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response,redirect,get_object_or_404
+from django.http import HttpResponse
 from forms import *
 from models import *
 
@@ -25,20 +26,29 @@ def list(request,what):
 	if what=='VAT':
 		dict['suffix']='%'
 	return render_to_response('list.html',dict)
-def edit(request,id,what,whatForm):
+def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 	object=get_object_or_404(what,id=id)
 	Form=whatForm
 	if request.method=='POST':
 		form=Form(data=request.POST,instance=object)
 		form.save()
-		return redirect('/manage')
+		if request.session['return_page']:
+			return redirect(request.session['return_page'])
+		else:
+			return redirect('/manage')
 	else:
 		form=Form(instance=object)
-		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id)})
+#		request.session['return_page']=request.path
+		request.session['return_page']=request.META['HTTP_REFERER']
+		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id),'action_prefix':action_prefix})
 def delete(request,id,what):
 	object=get_object_or_404(what,id=id)
 	if request.method=='POST':
 		object.delete()
-		return render_to_response('deleted.html')
+		if request.session['return_page']:
+			return redirect(request.session['return_page'])
+		else:
+			return render_to_response('deleted.html')
 	else:
+		request.session['return_page']=request.META['HTTP_REFERER']
 		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object})
