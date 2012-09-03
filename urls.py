@@ -26,7 +26,9 @@ urlpatterns = patterns('',
 	url(r'^ajax/',include('NKF.ajax.urls')),
 	url(r'^miasto/',include('NKF.kontrahenci.miasto_urls')),
 	url(r'^kontrahent/',include('NKF.kontrahenci.kontrahenci_urls')),
+	url(r'^faktura/',include('NKF.faktury.urls')),
 
+	url(r'^back/$',views.back),
 
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^media/(?P<path>.*)', 'django.views.static.serve',{'document_root': '/home/torgiren/python/NKF/media'}),
