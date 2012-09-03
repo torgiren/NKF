@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response,redirect,get_object_or_404
+from django.http import HttpResponse
 from models import *
 from NKF.core.models import *
 from NKF.kontrahenci.models import *
@@ -16,3 +17,6 @@ def ajax_towar(request,id):
 def ajax_kontrahent(request,id):
 	obj=get_object_or_404(Kontrahent,id=id)
 	return render_to_response('ajax_kontrahent.html',{'kontrahent':obj})	
+def ajax_cena_zakupu_netto(request,id):
+	obj=get_object_or_404(Towar,id=id)
+	return HttpResponse(obj.zakup_netto())

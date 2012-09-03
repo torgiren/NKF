@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import patterns, include, url
-
 import views
 urlpatterns = patterns('',
     # Examples:
@@ -12,5 +11,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
 	url(r'^$',views.index),
 	url(r'^towar/(?P<id>\d+)/$',views.ajax_towar),
+	url(r'^towar/(?P<id>\d+)/cena_zakupu_netto/$',views.ajax_cena_zakupu_netto),
 	url(r'^kontrahent/(?P<id>\d+)/$',views.ajax_kontrahent),
+	
 )
