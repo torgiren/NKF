@@ -10,12 +10,13 @@ def dodaj(request,what,whatForm):
 #		form=TowarForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('/manage');
+			return redirect('/%s/'%what.__name__.lower())
 		else:
 			return render_to_response('add.html',{'form':form})
 	else:
 		form=Form()
 		html=render_to_response('add.html',{'form':form,'action':'/%s/dodaj/'%what.__name__.lower()})
+		request.session['return_page']=None
 		return html
 def list(request,what):
 #	items=globals()['%s'%what].objects.all()
