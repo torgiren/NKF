@@ -12,6 +12,7 @@
 	})
 {% endblock %}
 {% block manage_content %}
+<form method='POST'>
 <table class='colortable'>
 <tr><td>Nazwa</td><td> {{ towar.nazwa }}</td></tr>
 <tr><td>Cena zakupu netto</td><td> {{towar.zakup_netto }}</td></tr>
@@ -20,4 +21,6 @@
 <tr><td>Marża</td><td> <input id='marza' type='text' name='marza' value='{{towar.marza }}' style='width: 4em' autocomplete="off">%</td></tr>
 <tr><td>Cena sprzedaży brutto</td><td> <input id='sprzedaz_brutto' type='text' name='sprzedaz_brutto' value='{{towar.sprzedaz_brutto }}' style='width: 4em' autocomplete="off"></td></tr>
 </table>
+<input type='submit' value='Zapisz'>
+</form>
 {% endblock %}
