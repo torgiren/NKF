@@ -20,6 +20,7 @@ urlpatterns = patterns('',
 	url(r'^dodaj/$',views.dodaj,{'what':Towar,'whatForm':TowarForm}),
 	url(r'^(?P<id>\d+)/edit/$',views.edit,{'what':Towar,'whatForm':TowarForm}),
 	url(r'^(?P<id>\d+)/delete/$',views.delete,{'what':Towar}),
+	url(r'^(?P<id>\d+)/kalkulacja/$',views.kalkulacja),
 
 
 )
