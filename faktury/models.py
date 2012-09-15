@@ -15,13 +15,17 @@ class Zakup(models.Model):
 	def wartosc(self):
 		#TODO Z niewiadomych przyczyn nie dało się self.cena_brutto()*selt.ilosc
 		return round(self.ilosc*self.cena*(1+self.towar.vat.wartosc/100),2)
-class Paragon(models.Model):
+class DokumentSprzedazy(models.Model):
 	data=models.DateField()
 	towary=models.ManyToManyField(Zakup,blank=True,null=True)
 	numer=models.CharField(max_length=30)
 	def __unicode__(self):
 		return u"%s, %s"%(self.numer,self.data)
-class Faktura(Paragon):
+	class Meta:
+		abstract = True
+class Paragon(DokumentSprzedazy):
+	pass
+class Faktura(DokumentSprzedazy):
 	kontrahent=models.ForeignKey(Kontrahent)
 #	data=models.DateField()
 #	towary=models.ManyToManyField(Zakup,blank=True,null=True)
