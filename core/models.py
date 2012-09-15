@@ -28,11 +28,11 @@ class Towar(models.Model):
 	def zakup_netto(self):
 		return self.cena
 	def zakup_brutto(self):
-		return self.cena*(1+self.vat.wartosc/100)
+		return round(self.cena*(1+self.vat.wartosc/100),2)
 	def sprzedaz_netto(self):
-		return self.cena*(1+self.marza/100)
+		return round(self.cena*(1+self.marza/100),2)
 	def sprzedaz_brutto(self):
-		return self.sprzedaz_netto()*(1+self.vat.wartosc/100)
+		return round(self.sprzedaz_netto()*(1.0+float(self.vat.wartosc)/float(100)),2)
 	class Meta:
 		ordering=['nazwa']
 

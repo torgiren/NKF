@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 import views
 from django.views.generic.simple import direct_to_template
+from NKF.faktury.models import *
 
 urlpatterns = patterns('',
     # Examples:
@@ -26,7 +27,8 @@ urlpatterns = patterns('',
 	url(r'^ajax/',include('NKF.ajax.urls')),
 	url(r'^miasto/',include('NKF.kontrahenci.miasto_urls')),
 	url(r'^kontrahent/',include('NKF.kontrahenci.kontrahenci_urls')),
-	url(r'^faktura/',include('NKF.faktury.urls')),
+	url(r'^faktura/',include('NKF.faktury.urls'),{'what':Faktura}),
+	url(r'^paragon/',include('NKF.faktury.urls'),{'what':Paragon}),
 
 	url(r'^back/$',views.back),
 

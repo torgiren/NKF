@@ -1,16 +1,18 @@
 {% extends 'manage.html' %}
 {% block manage_content %}
-<form action='/faktura/dodaj/' method='post'>
+<form action='/{{ what }}/dodaj/' method='post'>
 {% if blad %}
 <div class='blad'>Błędne dane, popraw</div>
 {% endif %}
 <table class='colortable faktura_table'>
 <tr><td>Nr: <input type='test' name='numer'></td><td>Data: <input type='text' id='id_data' name='data'></td></tr>
-<tr><td colspan='2'>Kontrahent: <select name='kontrahent'>
-{% for kon in kontrahenci %}
-<option value='{{ kon.id }}'>{{kon.fullName}}</option>
-{% endfor %}
-</select></td></tr>
+{% if kontrahenci %}
+	<tr><td colspan='2'>Kontrahent: <select name='kontrahent'>
+	{% for kon in kontrahenci %}
+	<option value='{{ kon.id }}'>{{kon.fullName}}</option>
+	{% endfor %}
+	</select></td></tr>
+{% endif %}
 </table>
 <input type='submit' value='Dalej'>
 </form>
