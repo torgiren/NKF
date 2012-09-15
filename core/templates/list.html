@@ -9,5 +9,8 @@ lista "{{type|capfirst}}"
 <td><a href='/{{type}}/{{ item.id }}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
 <td><a href='/{{type}}/{{ item.id }}/delete'><img src='/media/delete.gif' alt='delete'/></a></td></tr>
 {% endfor %}
+<tr><td></td><td></td><td colspan='2' style='text-align: center'>
+<a href='/{{type}}/dodaj/'><img src='/media/add.png'/></a>
+</td></tr>
 </table>
 {% endblock %}
