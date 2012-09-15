@@ -52,3 +52,10 @@ def delete(request,id,what,action_prefix=None):
 	else:
 		request.session['return_page']=request.META['HTTP_REFERER']
 		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object,'action_prefix':action_prefix})
+def kalkulacja(request,id):
+	if request.method=='POST':
+		return redurect(request.session['return_page'])
+	else:
+		request.session['return_page']=request.META['HTTP_REFERER']
+		obj=get_object_or_404(Towar,id=id)
+		return render_to_response('kalkulacja.html',{'towar':obj})
