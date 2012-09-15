@@ -3,6 +3,6 @@ import NKF.core.views
 from models import *
 import views
 urlpatterns = patterns('',
-	url(r'^$',views.ogolny),
+	url(r'^$',views.okres),
 )
 

@@ -1,10 +1,15 @@
 # Create your views here.
 import NKF.core.models
 import NKF.faktury.models
+import datetime
 from django.shortcuts import render_to_response, HttpResponse
-def ogolny(request):
-	faktury=NKF.faktury.models.Faktura.objects.all()
-	paragony=NKF.faktury.models.Paragon.objects.all()
+def okres(request):
+	if request.method=='POST' and request.POST['data']:
+		return generuj(request.POST['data'])
+	return render_to_response('okres.html')
+def generuj(data):
+	faktury=NKF.faktury.models.Faktura.objects.filter(data__lte=data)
+	paragony=NKF.faktury.models.Paragon.objects.filter(data__lte=data)
 	stan={}
 	for fakt in faktury:
 		zakupy=fakt.towary.all()
