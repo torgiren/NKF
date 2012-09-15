@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 	url(r'^$',views.index),
 	url(r'^towar/(?P<id>\d+)/$',views.ajax_towar),
 	url(r'^towar/(?P<id>\d+)/cena_zakupu_netto/$',views.ajax_cena_zakupu_netto),
+	url(r'^towar/(?P<id>\d+)/cena_sprzedazy_brutto/$',views.ajax_cena_sprzedazy_brutto),
 	url(r'^kontrahent/(?P<id>\d+)/$',views.ajax_kontrahent),
 	
 )

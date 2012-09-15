@@ -20,3 +20,6 @@ def ajax_kontrahent(request,id):
 def ajax_cena_zakupu_netto(request,id):
 	obj=get_object_or_404(Towar,id=id)
 	return HttpResponse(obj.zakup_netto())
+def ajax_cena_sprzedazy_brutto(request,id):
+	obj=get_object_or_404(Towar,id=id)
+	return HttpResponse(obj.sprzedaz_brutto())
