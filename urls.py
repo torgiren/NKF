@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 	url(r'^kontrahent/',include('NKF.kontrahenci.kontrahenci_urls')),
 	url(r'^faktura/',include('NKF.faktury.urls'),{'what':Faktura}),
 	url(r'^paragon/',include('NKF.faktury.urls'),{'what':Paragon}),
+	url(r'^stan/',include('NKF.stan.urls')),
 
 	url(r'^back/$',views.back),
 
