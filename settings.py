@@ -126,6 +126,7 @@ INSTALLED_APPS = (
 	'NKF.faktury',
 	'NKF.ajax',
 	'NKF.kontrahenci',
+	'NKF.stan',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
