@@ -5,7 +5,7 @@
 <div class='blad'>Błędne dane, popraw</div>
 {% endif %}
 <table class='colortable faktura_table'>
-<tr><td>Nr: <input type='test' name='numer'></td><td>Data: <input type='text' id='id_data' name='data'></td></tr>
+<tr><td>Nr: <input type='test' name='numer' value='{{ nr }}'></td><td>Data: <input type='text' id='id_data' name='data' value='{{ data}}'></td></tr>
 {% if kontrahenci %}
 	<tr><td colspan='2'>Kontrahent: <select name='kontrahent'>
 	{% for kon in kontrahenci %}
