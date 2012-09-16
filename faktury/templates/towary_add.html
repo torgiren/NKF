@@ -36,9 +36,21 @@ Tutaj będzie nazwa kupującego
 <tr><th>L.p</th><th>Nazwa</th><th>Ilość</th>{% if fakt.kontrahent %}<th>Cena netto</th></th><th>VAT</th>{% endif %}<th>Cena brutto</th><th>Wartość</th><th></th><th></th></tr>
 {% for dodany in dodane %}
 <tr class='{% cycle row1,row2 %} '><td>{{ forloop.counter }}</td><td id='list_{{dodany.towar.id}}' class='show_towar'>{{dodany.towar}}</td><td>{{ dodany.ilosc }}</td>
-{% if fakt.kontrahent %}<td {% if dodany.towar.kalkulacja %} class='kalkulacja'{%endif%}>{{ dodany.cena }} {% if dodany.towar.kalkulacja %}<a href=/towar/{{dodany.towar.id}}/kalkulacja><img src='/media/calculator.png' alt='Kalkulacja cen'></a>{% endif %}</td><td>{{dodany.towar.vat}}%</td>
+{% if fakt.kontrahent %}
+	<td {% if dodany.towar.kalkulacja %} 
+		class='kalkulacja'
+	{%endif%}>
+	{{ dodany.cena }}
+	{% if dodany.towar.kalkulacja %}
+		<a href=/towar/{{dodany.towar.id}}/kalkulacja><img src='/media/calculator.png' alt='Kalkulacja cen'></a>
+	{% endif %}</td><td>{{dodany.towar.vat}}%</td>
 {% endif %}
-<td>{{dodany.cena_brutto}}<td>{{dodany.wartosc}}</td>
+<td>
+{% if fakt.kontrahent %}
+	{{dodany.cena_brutto}}</td><td>{{dodany.wartosc}}</td>
+{% else %}
+	{{dodany.sprzedaz_brutto }} </td><td>{{ dodany.wartosc_sprzedaz_brutto }}</td>
+{% endif %}
 <td><a href='/{{what}}/zakup/{{ dodany.id }}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
 <td><a href='/{{what}}/zakup/{{ dodany.id }}/delete'><img src='/media/delete.gif' alt='delete'/></a></td></tr>
 {% endfor %}

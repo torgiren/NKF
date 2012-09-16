@@ -47,7 +47,7 @@ def dodaj_towary(request, id,what):
 	dodane=element.towary.all()
 	suma=0
 	for i in dodane:
-		suma+=i.wartosc()
+		suma+=i.wartosc_sprzedaz_brutto()
 	return render_to_response('towary_add.html',{'fakt':element,'url':url,'towary':Towar.objects.all(),'form':ZakupForm,'dodane':dodane,'suma':suma,'what':what.__name__.lower()})
 from django.http import HttpResponse
 def paragon_next_number(data):
