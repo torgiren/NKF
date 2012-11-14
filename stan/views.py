@@ -1,12 +1,12 @@
 # Create your views here.
 import NKF.core.models
 import NKF.faktury.models
-import datetime
+from datetime import *
 from django.shortcuts import render_to_response, HttpResponse
 def okres(request):
 	if request.method=='POST' and request.POST['data']:
 		return generuj(request.POST['data'])
-	return render_to_response('okres.html')
+	return render_to_response('okres.html',{'data':date.isoformat(date.today())})
 def generuj(data):
 	faktury=NKF.faktury.models.Faktura.objects.filter(data__lte=data)
 	paragony=NKF.faktury.models.Paragon.objects.filter(data__lte=data)

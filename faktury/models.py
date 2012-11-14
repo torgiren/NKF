@@ -15,6 +15,10 @@ class Zakup(models.Model):
 	def wartosc(self):
 		#TODO Z niewiadomych przyczyn nie dało się self.cena_brutto()*selt.ilosc
 		return round(self.ilosc*self.cena*(1+self.towar.vat.wartosc/100),2)
+	def sprzedaz_brutto(self):
+		return round(self.towar.sprzedaz_brutto(),2)
+	def wartosc_sprzedaz_brutto(self):
+		return round(self.sprzedaz_brutto()*float(self.ilosc),2)
 class DokumentSprzedazy(models.Model):
 	data=models.DateField()
 	towary=models.ManyToManyField(Zakup,blank=True,null=True)

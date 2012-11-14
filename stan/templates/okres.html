@@ -3,7 +3,7 @@
 {% block manage_content %}
 Wybierz dzień na którego stan chcesz wygenerować:
 <form action='/stan/' method='POST'>
-Data: <input type='text' name='data' id='id_data'>
+Data: <input type='text' name='data' id='id_data' value='{{ data }}'>
 <input type='submit' value='Wygeneruj'>
 </form>
 {% endblock %}

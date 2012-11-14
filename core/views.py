@@ -25,6 +25,13 @@ def list(request,what):
 	dict={'items':items,'type':what.__name__.lower()}
 	if what=='VAT':
 		dict['suffix']='%'
+	if what==Towar:
+		class calc:
+			action='kalkulacja'
+			symbol='<img src="/media/calculator.png"/>'
+			alt='Kalkulacja cen'
+		tab=[calc,]
+		dict['opts']=tab
 	return render_to_response('list.html',dict)
 def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 	object=get_object_or_404(what,id=id)
