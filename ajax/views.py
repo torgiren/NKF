@@ -23,3 +23,9 @@ def ajax_cena_zakupu_netto(request,id):
 def ajax_cena_sprzedazy_brutto(request,id):
 	obj=get_object_or_404(Towar,id=id)
 	return HttpResponse(obj.sprzedaz_brutto())
+def ajax_menu_state(request,menu):
+	if menu in request.session:
+		del request.session[menu]
+	else:
+		request.session[menu]=True
+	return HttpResponse("")

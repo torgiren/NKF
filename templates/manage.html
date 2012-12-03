@@ -9,55 +9,55 @@
 <nav class="vert_menu" id='manage_menu'>
 {% block manage_menu %}
 <fieldset>
-	<legend>Towar</legend>
+	<legend id='slide_towar' {% if request.session.slide_towar %} class='start_open' {% endif %}>Towar</legend>
 	<ul>
 		<li><a href='/towar/dodaj'>Dodaj</a></li>
 		<li><a href='/towar/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>Faktury zakupu</legend>
+	<legend id='slide_faktury' {% if request.session.slide_faktury %} class='start_open' {% endif %}>Faktury zakupu</legend>
 	<ul>
 		<li><a href='/faktura/dodaj'>Dodaj</a></li>
 		<li><a href='/faktura/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>Paragony</legend>
+	<legend id='slide_paragony' {% if request.session.slide_paragony %} class='start_open' {% endif %}>Paragony</legend>
 	<ul>
 		<li><a href='/paragon/dodaj'>Dodaj</a></li>
 		<li><a href='/paragon/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>Stan magazynu</legend>
+	<legend id='slide_stan_magazynowy' {% if request.session.slide_stan_magazynowy %} class='start_open' {% endif %}>Stan magazynowy</legend>
 	<ul>
 		<li><a href='/stan'>Stan magazynu</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>Kontrahenci</legend>
+	<legend id='slide_kontrahenci' {% if request.session.slide_kontrahenci %} class='start_open' {% endif %}>Kontrahenci</legend>
 	<ul>
 		<li><a href='/kontrahent/dodaj'>Dodaj</a></li>
 		<li><a href='/kontrahent/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>VAT</legend>
+	<legend id='slide_vat' {% if request.session.slide_vat %} class='start_open' {% endif %}>VAT</legend>
 	<ul>
 		<li><a href='/vat/dodaj'>Dodaj</a></li>
 		<li><a href='/vat/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>JM</legend>
+	<legend id='slide_jm' {% if request.session.slide_jm %} class='start_open' {% endif %}>JM</legend>
 	<ul>
 		<li><a href='/jm/dodaj'>Dodaj</a></li>
 		<li><a href='/jm/'>Lista</a></li>
 	</ul>
 </fieldset>
 <fieldset>
-	<legend>Miasta</legend>
+	<legend id='slide_miasta' {% if request.session.slide_miasta %} class='start_open' {% endif %}>Miasta</legend>
 	<ul>
 		<li><a href='/miasto/dodaj'>Dodaj</a></li>
 		<li><a href='/miasto/'>Lista</a></li>

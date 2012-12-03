@@ -1,10 +1,12 @@
 # Create your views here.
 from django.shortcuts import render_to_response,redirect,get_object_or_404
 from django.http import HttpResponse
+from django.template.context import RequestContext
 from forms import *
 from models import *
 
 def dodaj(request,what,whatForm):
+	request.session['proba']="Test2"
 	Form=whatForm
 	if request.method=='POST':
 		form=Form(request.POST)
@@ -16,10 +18,11 @@ def dodaj(request,what,whatForm):
 			return render_to_response('add.html',{'form':form})
 	else:
 		form=Form()
-		html=render_to_response('add.html',{'form':form,'action':'/%s/dodaj/'%what.__name__.lower()})
+		html=render_to_response('add.html',{'form':form,'action':'/%s/dodaj/'%what.__name__.lower()},context_instance=RequestContext(request))
 		request.session['return_page']=None
 		return html
 def list(request,what):
+	request.session['proba']="Test"
 #	items=globals()['%s'%what].objects.all()
 	items=what.objects.all()
 	dict={'items':items,'type':what.__name__.lower()}
@@ -32,7 +35,8 @@ def list(request,what):
 			alt='Kalkulacja cen'
 		tab=[calc,]
 		dict['opts']=tab
-	return render_to_response('list.html',dict)
+	html= render_to_response('list.html',dict,context_instance=RequestContext(request))
+	return html
 def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 	object=get_object_or_404(what,id=id)
 	Form=whatForm
@@ -47,7 +51,7 @@ def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 		form=Form(instance=object)
 #		request.session['return_page']=request.path
 		request.session['return_page']=request.META['HTTP_REFERER']
-		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id),'action_prefix':action_prefix})
+		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id),'action_prefix':action_prefix},context_instance=RequestContext(request))
 def delete(request,id,what,action_prefix=None):
 	object=get_object_or_404(what,id=id)
 	if request.method=='POST':
@@ -55,13 +59,13 @@ def delete(request,id,what,action_prefix=None):
 		if request.session['return_page']:
 			return redirect(request.session['return_page'])
 		else:
-			return render_to_response('deleted.html')
+			return render_to_response('deleted.html',context_instance=RequestContext(request))
 	else:
 		if 'HTTP_REFERER' in request.META:
 			request.session['return_page']=request.META['HTTP_REFERER']
 		else:
 			request.session['return_page']='/manage'
-		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object,'action_prefix':action_prefix})
+		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object,'action_prefix':action_prefix},context_instance=RequestContext(request))
 def kalkulacja(request,id):
 	if request.method=='POST' and request.POST['marza']:
 		obj=get_object_or_404(Towar,id=id)
@@ -75,4 +79,4 @@ def kalkulacja(request,id):
 		else:
 			request.session['return_page']='/manage'
 		obj=get_object_or_404(Towar,id=id)
-		return render_to_response('kalkulacja.html',{'towar':obj})
+		return render_to_response('kalkulacja.html',{'towar':obj},context_instance=RequestContext(request))
