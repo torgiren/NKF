@@ -8,4 +8,3 @@ def back(request):
 		return ret
 	else:
 		return redirect('/')
-	

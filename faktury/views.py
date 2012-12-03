@@ -1,4 +1,5 @@
 # Create your views here.
+from django.template.context import RequestContext
 from django.shortcuts import render_to_response,redirect,get_object_or_404
 from models import *
 from forms import *
@@ -23,9 +24,9 @@ def dodaj(request,what):
 			id=form.save().id
 			return redirect('/%s/%d/edit'%(what.__name__.lower(),id))
 		else:
-			return render_to_response('faktura_add.html',{'kontrahenci':kon,'blad':True,'what':what.__name__.lower(),'nr':nr,'data':data})
+			return render_to_response('faktura_add.html',{'kontrahenci':kon,'blad':True,'what':what.__name__.lower(),'nr':nr,'data':data},context_instance=RequestContext(request))
 	else:
-		return render_to_response('faktura_add.html',{'kontrahenci':kon,'what':what.__name__.lower(),'nr':nr,'data':data})
+		return render_to_response('faktura_add.html',{'kontrahenci':kon,'what':what.__name__.lower(),'nr':nr,'data':data},context_instance=RequestContext(request))
 def dodaj_towary(request, id,what):
 	url=request.path
 	element=get_object_or_404(what,id=id)
@@ -51,7 +52,7 @@ def dodaj_towary(request, id,what):
 			suma+=i.wartosc_sprzedaz_brutto()
 		else:
 			suma+=i.wartosc()
-	return render_to_response('towary_add.html',{'fakt':element,'url':url,'towary':Towar.objects.all(),'form':ZakupForm,'dodane':dodane,'suma':suma,'what':what.__name__.lower()})
+	return render_to_response('towary_add.html',{'fakt':element,'url':url,'towary':Towar.objects.all(),'form':ZakupForm,'dodane':dodane,'suma':suma,'what':what.__name__.lower()},context_instance=RequestContext(request))
 from django.http import HttpResponse
 def paragon_next_number(data):
 	paragony=Paragon.objects.filter(data=data)
