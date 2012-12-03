@@ -1,4 +1,5 @@
 # Create your views here.
+from django.template.context import RequestContext
 import NKF.core.models
 import NKF.faktury.models
 from datetime import *
@@ -6,7 +7,7 @@ from django.shortcuts import render_to_response, HttpResponse
 def okres(request):
 	if request.method=='POST' and request.POST['data']:
 		return generuj(request.POST['data'])
-	return render_to_response('okres.html',{'data':date.isoformat(date.today())})
+	return render_to_response('okres.html',{'data':date.isoformat(date.today())},context_instance=RequestContext(request))
 def generuj(data):
 	faktury=NKF.faktury.models.Faktura.objects.filter(data__lte=data)
 	paragony=NKF.faktury.models.Paragon.objects.filter(data__lte=data)
@@ -23,4 +24,4 @@ def generuj(data):
 			if zak.towar.nazwa not in stan:
 				stan[str(zak.towar.nazwa)]=0
 			stan[str(zak.towar.nazwa)]-=zak.ilosc
-	return render_to_response('stan.html',{'stan':stan})
+	return render_to_response('stan.html',{'stan':stan},context_instance=RequestContext(request))
