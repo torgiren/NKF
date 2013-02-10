@@ -7,7 +7,7 @@ from NKF.kontrahenci.models import *
 def index(request):
 	return render_to_response('ajax_index.html')
 def ajax_towar(request,id):
-	obj=get_object_or_404(Towar,id=id)
+	obj=get_object_or_404(Towar,ean=id)
 	ceny=dict()
 	ceny['zakup_netto']=obj.zakup_netto();
 	ceny['zakup_brutto']=obj.zakup_brutto()
@@ -15,13 +15,13 @@ def ajax_towar(request,id):
 	ceny['sprzedaz_brutto']=obj.sprzedaz_brutto()
 	return render_to_response('ajax_towar.html',dict({'towar':obj}.items()+ceny.items()))
 def ajax_kontrahent(request,id):
-	obj=get_object_or_404(Kontrahent,id=id)
+	obj=get_object_or_404(Kontrahent,ean=id)
 	return render_to_response('ajax_kontrahent.html',{'kontrahent':obj})	
 def ajax_cena_zakupu_netto(request,id):
-	obj=get_object_or_404(Towar,id=id)
+	obj=get_object_or_404(Towar,ean=id)
 	return HttpResponse(obj.zakup_netto())
 def ajax_cena_sprzedazy_brutto(request,id):
-	obj=get_object_or_404(Towar,id=id)
+	obj=get_object_or_404(Towar,ean=id)
 	return HttpResponse(obj.sprzedaz_brutto())
 def ajax_menu_state(request,menu):
 	if menu in request.session:

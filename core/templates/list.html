@@ -10,10 +10,10 @@ lista "{{type|capfirst}}"
 {% for item in items %}
 <tr class="{% cycle row1,row2 %}"><td>{{forloop.counter}}</td>
 <td id='list_{{item.id}}' class='show_{{type}}'>{{ item}}{{suffix}}</td>
-<td><a href='/{{type}}/{{ item.id }}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
-<td><a href='/{{type}}/{{ item.id }}/delete'><img src='/media/delete.gif' alt='delete'/></a></td>
+<td><a href='/{{type}}/{% if item.id %}{{ item.id }}{% else %}{{item.ean}}{% endif %}/edit'><img src='/media/edit.png' alt='edit'/></a></td>
+<td><a href='/{{type}}/{% if item.id %}{{ item.id }}{% else %}{{item.ean}}{% endif %}/delete'><img src='/media/delete.gif' alt='delete'/></a></td>
 	{% for opt in opts %}
-		<td><a href='/{{type}}/{{ item.id }}/{{ opt.action }}' alt='{{ opt.alt }}'>{{opt.symbol|safe}}</a></td></tr>
+		<td><a href='/{{type}}/{% if item.id %}{{ item.id }}{% else %}{{item.ean}}{% endif %}/{{ opt.action }}' alt='{{ opt.alt }}'>{{opt.symbol|safe}}</a></td></tr>
 	{% endfor %}
 	</tr>
 {% endfor %}

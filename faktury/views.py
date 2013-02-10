@@ -21,7 +21,10 @@ def dodaj(request,what):
 #		form=FakturaForm(request.POST)
 		form=formFun(request.POST)
 		if form.is_valid():
-			id=form.save().id
+			if what==Towar:
+				id=form.save().ean
+			else:
+				id=form.save().id
 			return redirect('/%s/%d/edit'%(what.__name__.lower(),id))
 		else:
 			return render_to_response('faktura_add.html',{'kontrahenci':kon,'blad':True,'what':what.__name__.lower(),'nr':nr,'data':data},context_instance=RequestContext(request))
@@ -35,7 +38,7 @@ def dodaj_towary(request, id,what):
 		if form.is_valid():
 			id=form.save()
 			element.towary.add(id)
-			obj=get_object_or_404(Towar,id=form.cleaned_data['towar'].id)
+			obj=get_object_or_404(Towar,ean=form.cleaned_data['towar'].ean)
 			old=obj.cena;
 			new=form.cleaned_data['cena']
 #			obj.cena=form.cleaned_data['cena']

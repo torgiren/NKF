@@ -38,7 +38,10 @@ def list(request,what):
 	html= render_to_response('list.html',dict,context_instance=RequestContext(request))
 	return html
 def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
-	object=get_object_or_404(what,id=id)
+	if what==Towar:
+		object=get_object_or_404(what,ean=id)
+	else:
+		object=get_object_or_404(what,id=id)
 	Form=whatForm
 	if request.method=='POST':
 		form=Form(data=request.POST,instance=object)
@@ -53,7 +56,10 @@ def edit(request,id,what,whatForm,action_prefix=None,return_page=None):
 		request.session['return_page']=request.META['HTTP_REFERER']
 		return render_to_response('add.html',{'form':form,'action':'/%s/%s/edit/'%(what.__name__.lower(),id),'action_prefix':action_prefix},context_instance=RequestContext(request))
 def delete(request,id,what,action_prefix=None):
-	object=get_object_or_404(what,id=id)
+	if what==Towar:
+		object=get_object_or_404(what,ean=id)
+	else:
+		object=get_object_or_404(what,id=id)
 	if request.method=='POST':
 		object.delete()
 		if request.session['return_page']:
@@ -68,7 +74,7 @@ def delete(request,id,what,action_prefix=None):
 		return render_to_response('delete.html',{'action':'/%s/%s/delete/'%(what.__name__.lower(),id),'item':object,'action_prefix':action_prefix},context_instance=RequestContext(request))
 def kalkulacja(request,id):
 	if request.method=='POST' and request.POST['marza']:
-		obj=get_object_or_404(Towar,id=id)
+		obj=get_object_or_404(Towar,ean=id)
 		obj.marza=request.POST['marza']
 		obj.kalkulacja=False;
 		obj.save()
@@ -78,5 +84,5 @@ def kalkulacja(request,id):
 			request.session['return_page']=request.META['HTTP_REFERER']
 		else:
 			request.session['return_page']='/manage'
-		obj=get_object_or_404(Towar,id=id)
+		obj=get_object_or_404(Towar,ean=id)
 		return render_to_response('kalkulacja.html',{'towar':obj},context_instance=RequestContext(request))
