@@ -1,8 +1,9 @@
 body
 {
-	background: #d9d9d9;
-	background-image:url('/media/background.png');
-	background-repeat: no-repeat;
+#	background: #d9d9d9;
+#	background-image:url('/media/background.png');
+#	background-repeat: no-repeat;
+	background: #e1e1e1;
 }
 h1,h2 {
 padding: 0px;
@@ -25,10 +26,11 @@ nav a {
 	margin: 0px;
 	padding: 0px;
 	color:darkred;
-	height: 1.2em;
+	height: 1.7em;
 #	background:lightblue;
 }
 .horiz_menu li {
+	font-size: 1.5em;
 	float: left;
 	width: auto;
 	display: block;
@@ -65,9 +67,12 @@ footer {
 	padding-left:10px;
 	padding-top: 2px;
 	list-style-type: none;
+#	color: #6dffec;
+	color: black;
 }
 .vert_menu li:hover {
-	color: yellow;
+#	color: yellow;
+	color: blue;
 }
 .vert_menu li a {
 	display: inline-block;
@@ -120,3 +125,15 @@ fieldset {
 }
 .content {
 	margin-left: 10em;
+}
+.header
+{
+#	margin-top:50px;
+#	margin-bottom:-25px;
+#	float: left;
+	display: inline-block;
+}
+.header_right
+{
+	float:right;
+}
