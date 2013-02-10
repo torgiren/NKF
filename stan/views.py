@@ -1,4 +1,5 @@
 # Create your views here.
+#coding=utf-8
 from django.template.context import RequestContext
 import NKF.core.models
 import NKF.faktury.models
@@ -6,7 +7,8 @@ from datetime import *
 from django.shortcuts import render_to_response, HttpResponse
 def okres(request):
 	if request.method=='POST' and request.POST['data']:
-		return generuj(request.POST['data'])
+#		return generuj(request.POST['data'])
+		return render_to_response('stan.html',{'stan':generuj(request.POST['data'])},context_instance=RequestContext(request))
 	return render_to_response('okres.html',{'data':date.isoformat(date.today())},context_instance=RequestContext(request))
 def generuj(data):
 	faktury=NKF.faktury.models.Faktura.objects.filter(data__lte=data)
@@ -15,13 +17,14 @@ def generuj(data):
 	for fakt in faktury:
 		zakupy=fakt.towary.all()
 		for zak in zakupy:
-			if zak.towar.nazwa not in stan:
-				stan[str(zak.towar.nazwa)]=0
-			stan[str(zak.towar.nazwa)]+=zak.ilosc
+			if zak.towar.ean not in stan:
+				stan[zak.towar.ean]=0
+			stan[zak.towar.ean]+=zak.ilosc
 	for par in paragony:
 		zakupy=par.towary.all()
 		for zak in zakupy:
-			if zak.towar.nazwa not in stan:
-				stan[str(zak.towar.nazwa)]=0
-			stan[str(zak.towar.nazwa)]-=zak.ilosc
-	return render_to_response('stan.html',{'stan':stan},context_instance=RequestContext(request))
+			if zak.towar.ean not in stan:
+				stan[zak.towar.ean]=0
+			stan[zak.towar.ean]-=zak.ilosc
+	return stan
+#	return render_to_response('stan.html',{'stan':stan},context_instance=RequestContext(request))
