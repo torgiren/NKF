@@ -3,7 +3,9 @@ from NKF.core import models
 class TowarForm(forms.ModelForm):
 	class Meta:
 		model=models.Towar
-		exclude=('kalkulacja',)
+		exclude=('kalkulacja')
+		initial={'cena':0,
+				'marza':0}
 class VATForm(forms.ModelForm):
 	class Meta:
 		model=models.VAT
