@@ -3,7 +3,7 @@ body
 #	background: #d9d9d9;
 #	background-image:url('/media/background.png');
 #	background-repeat: no-repeat;
-	background: #e1e1e1;
+	background: #e8e8f8;
 }
 h1,h2 {
 padding: 0px;
@@ -82,6 +82,7 @@ footer {
 .colortable {
 	border-spacing:0px 0px 0px 0px;
 	border-collapse: collapse;
+	background: white;
 			
 }
 .colortable .row1 {
@@ -95,6 +96,8 @@ footer {
 }
 .colortable td, .colortable th{
 	border: 1px solid;
+#	padding-left:5px;
+#	padding-right:5px;
 }
 .colortable img {
 	height: 0.8em;
@@ -131,9 +134,17 @@ fieldset {
 #	margin-top:50px;
 #	margin-bottom:-25px;
 #	float: left;
-	display: inline-block;
+#	display: inline-block;
 }
 .header_right
 {
 	float:right;
+}
+.round_border
+{
+	max-width:50%;
+	background: white;
+	border:1px solid black;
+	border-radius: 20px;
+	padding: 25px;
 }

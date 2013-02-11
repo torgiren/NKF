@@ -3,7 +3,7 @@
 {% block manage_content %}
 Tutaj będzie dodawanie VAT
 a to formularz:
-<form action='{% if action_prefix %}/{{action_prefix}}/{%endif%}{{action}}' method='post'>
+<form class='round_border'action='{% if action_prefix %}/{{action_prefix}}/{%endif%}{{action}}' method='post'>
 {% csrf_token %}
 <table>
 	{{ form.as_table }}
