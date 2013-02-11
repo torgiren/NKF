@@ -1,4 +1,4 @@
-$('legend').siblings().slideUp(0);
+$('h3').siblings().slideUp(0);
 //$('.start_open').siblings().slideDown(0);
 var cookies={};
 if(document.cookie && document.cookie!='')
@@ -22,7 +22,7 @@ if(document.cookie && document.cookie!='')
 };
 
 $(function(){
-  $('legend').click(function(a){
+  $('h3').click(function(a){
 //   $(this).siblings().slideToggle("slow");
   $(this).siblings().slideToggle("slow",function() {
 		var obj=$(this).siblings()[0]

@@ -52,23 +52,18 @@ footer {
 	margin-right: 1em;
 }
 .vert_menu ul {
-	margin-top: 0;
-	margin-left: -2em;
-	margin-bottom: -0.5em;
+#	margin-top: 0;
+	margin-left: -10px;
+#	margin-bottom: -0.5em;
 }
 .vert_menu li {
-	background-image: url('/media/li.png');
-	background-repeat: no-repeat;
-	width:100px;
-	height:25px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-#	margin-left: 0px;
-	padding-left:10px;
-	padding-top: 2px;
+	width:120px;
+	margin-top: 5px;
 	list-style-type: none;
-#	color: #6dffec;
 	color: black;
+	border-radius: 10px;
+	background:#e1e1e1;
+	text-align:center;
 }
 .vert_menu li:hover {
 #	color: yellow;
@@ -77,7 +72,20 @@ footer {
 .vert_menu li a {
 	display: inline-block;
 	width:100%;
-	height: 100%;
+#	height: 100%;
+}
+.vert_menu h3 {
+	margin-top:0px;
+	margin-left:15px;
+	margin-bottom:0px;
+}
+.vert_menu ul {
+	padding-left:25px;
+	width: 100px;
+}
+.vert_menu div {
+	width: 150px;
+	margin-top: 5px;
 }
 .colortable {
 	border-spacing:0px 0px 0px 0px;
@@ -142,9 +150,9 @@ fieldset {
 }
 .round_border
 {
-	max-width:50%;
+#	max-width:50%;
 	background: white;
 	border:1px solid black;
-	border-radius: 20px;
-	padding: 25px;
+	border-radius: 15px;
+#	padding: 25px;
 }
