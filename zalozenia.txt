@@ -1,0 +1,22 @@
+dodawanie towaru
+zakup towaru
+	faktura
+	paragon
+sprzedaż towaru
+	faktura
+	paragon
+przesunięcie magazynowe
+remanent
+informacja o niskim stanie magazynowym towaru
+historia cen
+generowanie zamówień na podstawie najniższych cen
+|-> obsługa zamówień "pakietowych" (min. x sztuk -> niższa cena)
+
+dodanie pracownika
+koszty pracowników
+lista obecności
+
+wybór kasjera
+
+ustawienia wyglądu faktury
+ustawienia danych firmy
