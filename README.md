@@ -2,7 +2,7 @@ Nowa wersja NKF :)
 
 A oto co to będzie...
 
-Niezbędnik Każdej Firmy jest oprogramowaniem ERP.
+Niezbędnik Każdej Firmy jest oprogramowaniem ERP.  
 Jego głównym zadaniem jest wspomaganie takich operacji jak:
 - przygotowywanie zamówień
 - przyjecie towaru
