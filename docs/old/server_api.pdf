@@ -1,0 +1,463 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<< /F1 2 0 R /F2 3 0 R /F3 4 0 R >>
+endobj
+2 0 obj
+<< /BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font >>
+endobj
+3 0 obj
+<< /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >>
+endobj
+4 0 obj
+<< /BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font >>
+endobj
+5 0 obj
+<< /Contents 16 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 15 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+6 0 obj
+<< /Contents 17 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 15 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+7 0 obj
+<< /Contents 18 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 15 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+8 0 obj
+<< /Contents 19 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 15 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+9 0 obj
+<< /Outlines 11 0 R /PageLabels 20 0 R /PageMode /UseNone /Pages 15 0 R /Type /Catalog >>
+endobj
+10 0 obj
+<< /Author () /CreationDate (D:20141031004702-01'00') /Creator (\(unspecified\)) /Keywords () /Producer (ReportLab PDF Library - www.reportlab.com) /Subject (\(unspecified\)) 
+  /Title () >>
+endobj
+11 0 obj
+<< /Count 3 /First 12 0 R /Last 14 0 R /Type /Outlines >>
+endobj
+12 0 obj
+<< /Dest [ 5 0 R /XYZ 62.69291 765.0236 0 ] /Next 13 0 R /Parent 11 0 R /Title (BASE) >>
+endobj
+13 0 obj
+<< /Dest [ 5 0 R /XYZ 62.69291 641.6236 0 ] /Next 14 0 R /Parent 11 0 R /Prev 12 0 R /Title (VAT) >>
+endobj
+14 0 obj
+<< /Dest [ 7 0 R /XYZ 62.69291 277.4236 0 ] /Parent 11 0 R /Prev 13 0 R /Title (TOWAR) >>
+endobj
+15 0 obj
+<< /Count 4 /Kids [ 5 0 R 6 0 R 7 0 R 8 0 R ] /Type /Pages >>
+endobj
+16 0 obj
+<< /Length 2600 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 744.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (BASE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 710.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (GET /) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 653.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F3 10 Tf 12 TL (200 OK) Tj T* ({) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 620.6236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (VAT) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 587.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (GET /vat) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 86.22362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 492 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 470 Tm /F3 10 Tf 12 TL (200 OK) Tj T* ({) Tj T* (    "vats" : [) Tj T* (        {) Tj T* (            "id": 1,) Tj T* (            "value": "0",) Tj T* (            "links": [) Tj T* (                {) Tj T* (                    "href": "/vat/1",) Tj T* (                    "rel": "self",) Tj T* (                    "method": "GET") Tj T* (                },) Tj T* (                {) Tj T* (                    "href": "/vat/1",) Tj T* (                    "rel": "edit",) Tj T* (                    "method": "PUT") Tj T* (                },) Tj T* (                {) Tj T* (                    "href": "/vat/1",) Tj T* (                    "rel": "delete",) Tj T* (                    "method": "DELETE") Tj T* (                }) Tj T* (            ]) Tj T* (        },) Tj T* (        {) Tj T* (            "id": 2,) Tj T* (            "value": "7",) Tj T* (            "links": [) Tj T* (                {) Tj T* (                    "href": "/vat/2",) Tj T* (                    "rel": "self",) Tj T* (                    "method": "GET") Tj T* (                },) Tj T* (                {) Tj T* (                    "href": "/vat/2",) Tj T* (                    "rel": "edit",) Tj T* (                    "method": "PUT") Tj T* (                },) Tj T* (                {) Tj T* (                    "href": "/vat/2",) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+17 0 obj
+<< /Length 2503 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 583.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 180 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 158 Tm /F3 10 Tf 12 TL (                    "rel": "delete",) Tj T* (                    "method": "DELETE") Tj T* (                }) Tj T* (            ]) Tj T* (        },) Tj T*  T* (    "links": [) Tj T* (        {) Tj T* (            "href": "/vat",) Tj T* (            "rel": "create",) Tj T* (            "method": "POST") Tj T* (        }) Tj T* (    ]) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 550.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (GET /vat/2) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 193.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 348 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 326 Tm /F3 10 Tf 12 TL (200 OK) Tj T* ({) Tj T* (    "vat": {) Tj T* (        "id": 2,) Tj T* (        "value": "7",) Tj T* (        "links": [) Tj T* (            {) Tj T* (                "href": "/vat/2",) Tj T* (                "rel": "self",) Tj T* (                "method": "GET") Tj T* (            },) Tj T* (            {) Tj T* (                "href": "/vat/2",) Tj T* (                "rel": "edit",) Tj T* (                "method": "PUT") Tj T* (            },) Tj T* (            {) Tj T* (                "href": "/vat/2",) Tj T* (                "rel": "delete",) Tj T* (                "method": "DELETE") Tj T* (            }) Tj T* (    },) Tj T* (    "links": {) Tj T* (        "href": "/vat",) Tj T* (        "rel": "list",) Tj T* (        "method": "GET") Tj T* (    }) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 124.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 60 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F3 10 Tf 12 TL (POST /vat) Tj T* ({) Tj T* (    "value": "23") Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 79.02362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F3 10 Tf 12 TL (201 Created) Tj T* ({) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+18 0 obj
+<< /Length 2636 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 439.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 324 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 302 Tm /F3 10 Tf 12 TL (    "vat": {) Tj T* (        "id": 3,) Tj T* (        "value": "23",) Tj T* (        "links": [) Tj T* (            {) Tj T* (                "href": "/vat/3",) Tj T* (                "rel": "self",) Tj T* (                "method": "GET") Tj T* (            },) Tj T* (            {) Tj T* (                "href": "/vat/3",) Tj T* (                "rel": "edit",) Tj T* (                "method": "PUT") Tj T* (            },) Tj T* (            {) Tj T* (                "href": "/vat/3",) Tj T* (                "rel": "delete",) Tj T* (                "method": "DELETE") Tj T* (            }) Tj T* (    },) Tj T* (    "links": {) Tj T* (        "href": "/vat",) Tj T* (        "rel": "list",) Tj T* (        "method": "GET") Tj T* (    }) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 406.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (DELETE /vat/1) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 289.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 108 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 86 Tm /F3 10 Tf 12 TL (204 No content) Tj T* ({) Tj T* (    "links": {) Tj T* (        "href": "/vat",) Tj T* (        "rel": "list",) Tj T* (        "method": "GET") Tj T* (    }) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 256.4236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (TOWAR) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 223.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (GET /towar) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 82.02362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 132 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 110 Tm /F3 10 Tf 12 TL (200 OK) Tj T* ({) Tj T* (    "items": [) Tj T* (        {) Tj T* (            "id": 1,) Tj T* (            "nazwa": "Mleko 1L 2%",) Tj T* (            "opis": "Mleko Laciate 2%, 1 litr") Tj T* (            "jm" : {) Tj T* (                "nazwa": "szt",) Tj T* (                "href": "/jm/1") Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+19 0 obj
+<< /Length 1027 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 511.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 252 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 230 Tm /F3 10 Tf 12 TL (            }) Tj T* (            "grupa": {) Tj T* (                "nazwa": "Nabial",) Tj T* (                "href": "/grupa/3") Tj T* (            }) Tj T* (            "cena": {) Tj T* (                "brutto": "3.20",) Tj T* (                "netto": "2,80",) Tj T* (                "href": "/cena/1") Tj T* (            }) Tj T* (            "stan": "26",) Tj T* (            "ostatni_zakup": {) Tj T* (                "data": "2014-10-12",) Tj T* (                "temu": "20", #dni) Tj T* (                "kontrahent" {) Tj T* (                    "nazwa": "Mleczarnia",) Tj T* (                    "href": "/kontrahent/4") Tj T* (                }) Tj T* (                "href" : "/towar/1/zakupy") Tj T* (            }) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+20 0 obj
+<< /Nums [ 0 21 0 R 1 22 0 R 2 23 0 R 3 24 0 R ] >>
+endobj
+21 0 obj
+<< /S /D /St 1 >>
+endobj
+22 0 obj
+<< /S /D /St 2 >>
+endobj
+23 0 obj
+<< /S /D /St 3 >>
+endobj
+24 0 obj
+<< /S /D /St 4 >>
+endobj
+xref
+0 25
+0000000000 65535 f
+0000000075 00000 n
+0000000129 00000 n
+0000000239 00000 n
+0000000354 00000 n
+0000000462 00000 n
+0000000671 00000 n
+0000000880 00000 n
+0000001089 00000 n
+0000001298 00000 n
+0000001406 00000 n
+0000001617 00000 n
+0000001694 00000 n
+0000001802 00000 n
+0000001922 00000 n
+0000002031 00000 n
+0000002112 00000 n
+0000004769 00000 n
+0000007329 00000 n
+0000010022 00000 n
+0000011106 00000 n
+0000011177 00000 n
+0000011214 00000 n
+0000011251 00000 n
+0000011288 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com)
+ [(\350\3608\333\303\010{\361V!\261\262\361\253&1) (\350\3608\333\303\010{\361V!\261\262\361\253&1)]
+ /Info 10 0 R /Root 9 0 R /Size 25 >>
+startxref
+11325
+%%EOF

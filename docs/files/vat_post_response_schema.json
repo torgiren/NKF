@@ -1,0 +1,12 @@
+{
+    "$schema": "url",
+    "vat" : {
+        "type": "object",
+        "properties": {
+			"id": {
+				"type": "string",
+				"required": true
+			}
+ 		}
+	}
+}

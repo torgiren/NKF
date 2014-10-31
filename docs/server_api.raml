@@ -1,0 +1,32 @@
+#%RAML 0.8
+---
+title: Niezbędnik Każdej Firmy
+baseUri: http://tu_bedzie_uri/{version}
+version: v1
+mediaType: application/json
+/vat:
+    displayName: VAT
+    get:
+        description: Pobiera liste wszystkich wartości VATu
+        responses:
+            200:
+                description: |
+                    Zwraca listę wszystkich wartości VATu
+                body:
+                    schema: !include files/vat_get_response_schema.json
+                    example: !include files/vat_get_response_example.json
+    post:
+        description: Dodaje nową stawkę VAT
+        body:
+            schema: !include files/vat_post_request_schema.json
+            example: !include files/vat_post_request_example.json
+        responses:
+            201: 
+                description: Udane tworzenie nowej stawki 
+                body:
+                    schema: !include files/vat_post_response_schema.json 
+    /{vatID}:
+        get:
+        put:
+        delete:
+/towar:
