@@ -1,0 +1,22 @@
+{
+    "$schema": "url",
+    "vat" : {
+        "type": "object",
+        "properties": {
+            "id": { "type": "integer" },
+            "wartosc": {"type": "string"}
+        },
+        "links": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "href": {"type": "string"},
+                    "rol": {"type": "string"},
+                    "method": {"type": "string"}
+                }
+            }
+        }
+    },
+    "required": ["id", "wartosc"]
+}

@@ -1,0 +1,11 @@
+{ 
+    "id": "12",
+    "wartosc": "7",
+    "links": [
+        {
+            "href": "/vat/12",
+            "rol": "self",
+            "method": "GET"
+        }
+    ]
+}

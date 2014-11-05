@@ -1,10 +1,9 @@
 {
-    "$schema": "http://cos",
     "properties": {
         "wartosc": {
             "type": "string",
-            "required": true,
             "description": "Wartość nowej stawki VAT"
         }
-    }
+    },
+    "required": ["wartosc"]
 }

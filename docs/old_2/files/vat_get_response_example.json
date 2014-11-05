@@ -2,7 +2,7 @@
     "vaty": [
         {
             "id": "1",
-            "wartosc": "7"
+            "wartosc": "7",
             "links" : [
                 {
                     "href": "/vat/1",
@@ -22,8 +22,8 @@
             ]
         },
         {
-            "id", "2",
-            "wartosc": "23"
+            "id": "2",
+            "wartosc": "23",
             "links" : [
                 {
                     "href": "/vat/1",

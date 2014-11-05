@@ -24,9 +24,23 @@ mediaType: application/json
             201: 
                 description: Udane tworzenie nowej stawki 
                 body:
-                    schema: !include files/vat_post_response_schema.json 
+                    schema: !include files/vat_post_response_schema_201.json 
+                    example: !include files/vat_post_response_example_201.json 
+            400:
+                description: Nie udało się utworzyć nowej stawki VAT
+                body:
+                    schema: !include files/vat_post_response_schema_400.json
+                    example: !include files/vat_post_response_example_400.json
     /{vatID}:
         get:
+            description: Pobiera wartość VATu o podanym id
+            responses:
+                200:
+                    schema: !include files/vatid_get_response_schema_200.json
+                    example: !include files/vatid_get_response_example_200.json
+                404:
+                    schema: !include files/vatid_get_response_schema_404.json
+                    example: !include files/vatid_get_response_example_404.json
         put:
         delete:
 /towar:

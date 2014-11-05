@@ -10,11 +10,11 @@
                     "links": {
                         "type": "array",
                         "items": {
-                            "type": "objects",
+                            "type": "object",
                             "properties": {
-                                "href": "string",
-                                "rel": "string",
-                                "method": "string"
+                                "href": {"type": "string"},
+                                "rol": {"type": "string"},
+                                "method": {"type": "string"}
                             }
                         }
                     }
@@ -24,11 +24,11 @@
         "links": {
             "type": "array",
             "items": {
-                "type": "objects",
+                "type": "object",
                 "properties": {
-                    "href": "string",
-                    "rel": "string",
-                    "method": "string"
+                    "href": {"type": "string"},
+                    "rol": {"type": "string"},
+                    "method": {"type": "string"}
                 }
             }
         }
