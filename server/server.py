@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 import os
+import json
 import sqlite3
 from flask import Flask
 from flask import g
+from flask import request
+from flask import jsonify
 from nkf import NKF
+from flask.ext.restful import reqparse, abort, Api, Resource
 app = Flask(__name__)
 app.config.from_object(__name__)
 
@@ -11,38 +15,22 @@ app.config.update(dict(
     DATABASE=os.path.join(app.root_path, "server.db"),
     DEBUG=True,
 ))
+api = Api(app)
 
-def old_connect_db():
-    rv = sqlite3.connect(app.config['DATABASE'])
-    rv.row_factory = sqlite3.Row
-    return rv
+class Vats(Resource):
+    def get(self):
+        lista = app.core.vat_list()
+        return lista
 
-def old_get_db():
-    if not hasattr(g, 'sqlite_db'):
-        g.sqlite_db = connect_db()
-    return g.sqlite_db
+class Vat(Resource):
+    def get(self, vat_id):
+        return "a to vat {}".format(vat_id)
 
-def old_init_db():
-    with app.app_context():
-        db = get_db()
-        with app.open_resource('initial.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+api.add_resource(Vats, '/vat')
+api.add_resource(Vat, '/vat/<vat_id>')
 
-#@app.teardown_appcontext
-#def old_close_db(error):
-#    if hasattr(g, 'sqlite_db'):
-#        g.sqlite_db.close()
-
-@app.route('/')
-def hello_world():
-    return "Hello"
-
-@app.route('/vat', methods=["GET"])
-def list_vats():
-    return "Lista"
-
+app.core = NKF()
+app.core.init()
 if __name__ == "__main__":
-    app.core = NKF()
-    app.core.init()
+    app.debug = True
     app.run()

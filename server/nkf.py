@@ -22,11 +22,9 @@ class NKF:
         Session = sessionmaker()
         Session.configure(bind=engine)
         self.__db = Session()
-        pass
 
     def vat_list(self):
         return "Lista"
 
     def vat_add(self, value):
         return "True"
-    pass
