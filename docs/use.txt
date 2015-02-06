@@ -1,4 +1,8 @@
 @startuml
+skinparam usecase {
+    BackgroundColor<< Tested >> DarkSeaGreen
+    BackgroundColor<< APIed >> YellowGreen
+}
 left to right direction
 title Przypadki użycia
 
