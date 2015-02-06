@@ -1,0 +1,44 @@
+@startuml
+start
+if (zalogowany) then (tak)
+else (nie)
+    :ekran logowania;
+    :logowanie;
+    if (udane logowanie) then (tak)
+    else (nie)
+        stop
+    endif
+endif
+:ekran startowy;
+if (użytkownik kasjer) then (tak)
+    :nowy paragon;
+    while (zakończ paragon) is (nie)
+        :wybierz towar;
+        :wybierz ilość;
+        if (czy rabat dla towaru) then (tak)
+            :ustaw rabat;
+        else (nie)
+        endif
+        if (usun pozycje) then (tak)
+            :wybierz pozycje;
+            :usun pozycje;
+        else (nie)
+        endif
+        if (sprawdz cene) then (tak)
+            :wybierz towar;
+            :wyświetl cene;
+        else (nie)
+        endif
+    endwhile
+    if (czy rabat dla całości) then (tak)
+        :ustaw rabat;
+    endif
+    stop
+elseif (użytkownik szef) then (tak)
+    :szef;
+    :TODO;
+    stop
+else (blad)
+    stop
+endif
+@enduml

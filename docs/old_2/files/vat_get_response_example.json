@@ -1,0 +1,53 @@
+{
+    "vaty": [
+        {
+            "id": "1",
+            "wartosc": "7",
+            "links" : [
+                {
+                    "href": "/vat/1",
+                    "rol": "self",
+                    "method": "GET"
+                },
+                {
+                    "href": "/vat/1",
+                    "rol": "edit",
+                    "method": "PUT"
+                },
+                {
+                    "href": "/vat/1",
+                    "rol": "delete",
+                    "method": "DELETE"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "wartosc": "23",
+            "links" : [
+                {
+                    "href": "/vat/1",
+                    "rol": "self",
+                    "method": "GET"
+                },
+                {
+                    "href": "/vat/1",
+                    "rol": "edit",
+                    "method": "PUT"
+                },
+                {
+                    "href": "/vat/1",
+                    "rol": "delete",
+                    "method": "DELETE"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "href": "/vat",
+            "rel": "create",
+            "method": "POST"
+        }
+    ]
+}

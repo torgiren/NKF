@@ -1,0 +1,97 @@
+@startuml
+object vat {
+    id = integer
+    nazwa = string
+    wartość = integer
+}
+
+object kontrahent {
+    id = integer
+    nazwa = string
+    adres = string
+    nip = string
+    telefon = string
+    fax = string
+    opis = string
+}
+
+object grupa {
+    id = integer
+    nazwa = string
+}
+
+object towar {
+    id = integer
+    nazwa = string
+    opis = string
+    producent = string
+    vat_id = integer
+}
+
+object cena {
+    id = integer
+    data = date/datetime ??
+    towar_id = integer
+    cena = integer (*100) ??
+    kontrahent_id = integer
+    promocyjna = boolean
+}
+
+object alias {
+    nazwa = string, PK
+    towar_id = integer
+}
+
+object transakcja_item {
+    id = integer
+    towar_id = integer
+    ilość = integer
+    jm_id = integer
+    cena_za_jm = integer
+    rabat = integer
+
+}
+
+object jm {
+    id = integer
+    nazwa = string
+}
+
+object jm_przelicznik {
+    z_jm_id = integer
+    na_jm_id = integer
+    współczynnik = integer
+}
+
+object transakcja {
+    id = integer
+    transakcja_id = integer
+    data = date/datetime
+    rabat = integer
+    suma = integer
+}
+
+object faktura {
+    id = integer
+    numer = string
+    kontrahent_id = integer
+}
+
+object paragon {
+}
+
+towar "wiele" *-- "wiele" grupa
+towar "1" *-- "wiele" vat
+towar "wiele" *-- "1" alias
+cena "1" *-- "wiele" kontrahent
+cena "1" *-- "wiele" towar
+transakcja_item "1" *-- "wiele" towar
+towar "1" *-- "wiele" jm
+transakcja_item "1" *-- "wiele" jm
+jm_przelicznik *==  jm
+transakcja "1" *-- "wiele" transakcja_item
+faktura <|-- transakcja
+paragon <|-- transakcja
+faktura "1" *-- "wiele" kontrahent
+
+@enduml

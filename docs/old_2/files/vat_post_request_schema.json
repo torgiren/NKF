@@ -1,0 +1,9 @@
+{
+    "properties": {
+        "wartosc": {
+            "type": "string",
+            "description": "Wartość nowej stawki VAT"
+        }
+    },
+    "required": ["wartosc"]
+}

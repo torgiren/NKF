@@ -1,0 +1,53 @@
+@startuml
+skinparam usecase {
+    BackgroundColor<< Tested >> DarkSeaGreen
+    BackgroundColor<< APIed >> YellowGreen
+}
+left to right direction
+title Przypadki użycia
+
+actor Szef
+actor Kasjer
+actor Administrator
+
+Kasjer <|-- Szef
+
+Kasjer --> (Przeglądaj towary)
+Kasjer --> (Dodaj paragon)
+
+Szef --> (Dodaj fakturę)
+Szef --> (Dodaj VAT)
+Szef --> (Dodaj kontrahenta)
+Szef --> (Dodaj towar)
+
+Szef --> (Przeglądaj faktury)
+Szef --> (Przeglądaj VATy)
+Szef --> (Przeglądaj kontrahentów)
+Szef --> (Przeglądaj paragony)
+
+Szef --> (Edytuj fakturę)
+Szef --> (Edytuj VAT)
+Szef --> (Edytuj kontrahenta)
+Szef --> (Edytuj towar)
+Szef --> (Edytuj paragon)
+
+Szef --> (Usuń fakturę)
+Szef --> (Usuń VAT)
+Szef --> (Usuń kontrahenta)
+Szef --> (Usuń towar)
+Szef --> (Usuń paragon)
+
+Szef --> (Generuj zamówienie)
+Szef --> (Remanent)
+
+(Kalkuluj ceny) .> (Dodaj fakturę) : include
+(Edytuj towar) .> (Kalkuluj ceny) : extends
+(Rabat) .> (Dodaj paragon) : extends
+(Rabat) .> (Dodaj fakturę) : extends
+(Rabat) .> (Edytuj fakturę) : extends
+
+Administrator --> (Dodaj użytkownika)
+Administrator --> (Usuń użytkownika)
+Administrator --> (Edytuj użytkownika)
+
+@enduml
